@@ -3,7 +3,9 @@ package com.svd;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 import com.mongodb.client.MongoDatabase;
+import lombok.Data;
 
+@Data
 public class ClientHandler {
 
     private final MongoClient mongoClient;
