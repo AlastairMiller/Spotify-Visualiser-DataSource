@@ -12,7 +12,7 @@ import java.util.List;
 import static com.mongodb.client.model.Filters.eq;
 
 
-abstract class BaseDao {
+abstract class BaseDao<T> {
 
     private final ClientHandler clientHandler;
 
@@ -26,7 +26,7 @@ abstract class BaseDao {
     }
 
 
-    void saveEntryToDatabase(Class<?> inputObject, MongoCollection<Document> collection) throws IllegalAccessException {
+    void saveEntryToDatabase(Class<T> inputObject, MongoCollection<Document> collection) throws IllegalAccessException {
         List<Field> fields = Arrays.asList(inputObject.getDeclaredFields());
         Document doc = new Document();
         for (Field field : fields) {
@@ -37,7 +37,7 @@ abstract class BaseDao {
     }
 
 
-    void updateEntryInDatabase(Class<?> inputObject, MongoCollection<Document> collection) throws IllegalAccessException {
+    void updateEntryInDatabase(Class<T> inputObject, MongoCollection<Document> collection) throws IllegalAccessException {
         List<Field> fields = Arrays.asList(inputObject.getDeclaredFields());
         Document doc = new Document();
         for (Field field : fields) {
