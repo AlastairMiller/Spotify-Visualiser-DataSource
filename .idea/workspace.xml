@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42215f6a-ccae-4b21-9a41-924cf877c57c" name="Default" comment="Other Daos implemented">
-      <change beforePath="" afterPath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/JsontoRefinedMapper.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/SpotifyVisualiserDataSource.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongoDao/mongoDao.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedArtistDao.java" afterPath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedArtistDao.java" />
+      <change beforePath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedTrackDao.java" afterPath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedTrackDao.java" />
+      <change beforePath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedUserDao.java" afterPath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedUserDao.java" />
+      <change beforePath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/JsontoRefinedMapper.java" afterPath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/JsontoRefinedMapper.java" />
+      <change beforePath="$PROJECT_DIR$/mongoDatamodel/mongoDatamodel.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -16,13 +23,57 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file leaf-file-name="RefinedTrack.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedTrack.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="527">
+                    <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="RefinedUser.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedUser.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="272">
+                    <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="RefinedPlaylist.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedPlaylist.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="102">
+                    <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="RefinedArtistDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedArtistDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,23 +84,9 @@
       <file leaf-file-name="RefinedUserDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedUserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RefinedArtist.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedArtist.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,11 +94,31 @@
       <file leaf-file-name="JsontoRefinedMapper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/JsontoRefinedMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="433">
+              <caret line="92" column="39" lean-forward="true" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mongoDatamodel/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,31 +126,11 @@
       <file leaf-file-name="RefinedPlaylistDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedPlaylistDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            <state relative-caret-position="119">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RefinedTrackDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedTrackDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RefinedPlaylist.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedPlaylist.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -101,21 +138,9 @@
       <file leaf-file-name="ClientHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/ClientHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
+            <state relative-caret-position="85">
               <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RefinedTrack.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedTrack.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -123,7 +148,7 @@
       <file leaf-file-name="RefinedUser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="136">
               <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -163,16 +188,23 @@
         <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/MongoUtils.java" />
         <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/JsonField.java" />
         <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/ClientHandler.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/BaseDao.java" />
         <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/TrackDao.java" />
+        <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedTrackDao.java" />
         <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedArtistDao.java" />
         <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedPlaylistDao.java" />
-        <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedTrackDao.java" />
         <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedUserDao.java" />
+        <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/BaseMapper.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/JsontoRefinedMapper.java" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -181,11 +213,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="y" value="-2" />
-    <option name="width" value="1920" />
-    <option name="height" value="1202" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="788" />
+    <option name="width" value="1132" />
+    <option name="height" value="1044" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -203,46 +234,44 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -250,8 +279,8 @@
               <item name="svd" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -260,8 +289,8 @@
               <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -270,34 +299,34 @@
               <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDatamodel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDatamodel" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDatamodel" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDatamodel" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDatamodel" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -308,18 +337,31 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="settings.editor.selected.configurable" value="Lombok plugin" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/dummyLoader (2)/dummyLoader" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="s&#9;PSI&#9;JAVA://sun.print.resources.serviceui_it" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="LombokPluginEnabledInProject" value="true" />
+    <property name="LombokPluginIS_VAL_Enabled" value="true" />
+    <property name="LombokPluginIS_BUILDER_Enabled" value="true" />
+    <property name="LombokPluginIS_DELEGATE_Enabled" value="true" />
+    <property name="LombokPluginIS_LOG_Enabled" value="true" />
+    <property name="LombokPluginIS_CONSTRUCTOR_Enabled" value="true" />
+    <property name="LombokPluginIS_THIRD_PARTY_Enabled" value="false" />
+    <property name="LombokPluginIS_RUNTIME_PATCH_Enabled" value="false" />
+    <property name="LombokPluginIS_LOMBOK_VERSION_CHECK_Enabled" value="true" />
+    <property name="LombokPluginIS_MISSING_LOMBOK_CHECK_Enabled" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -467,6 +509,10 @@
       <workItem from="1520602436040" duration="73000" />
       <workItem from="1520602545551" duration="10642000" />
       <workItem from="1520614556643" duration="2117000" />
+      <workItem from="1520627089778" duration="7473000" />
+      <workItem from="1520696844132" duration="1217000" />
+      <workItem from="1520698121614" duration="2449000" />
+      <workItem from="1520710525032" duration="922000" />
     </task>
     <task id="LOCAL-00001" summary="Removed junk">
       <created>1520594243141</created>
@@ -493,10 +539,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21571000" />
+    <option name="totallyTimeSpent" value="33632000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-2" width="1920" height="1202" extended-state="6" />
+    <frame x="788" y="0" width="1132" height="1044" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -511,7 +557,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2614728" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2857143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -557,6 +603,9 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -573,7 +622,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/ClientHandler.java" />
     <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/BaseDao.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -635,22 +683,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/jre/lib/rt.jar!/sun/print/resources/serviceui_it.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/jre/lib/rt.jar!/sun/print/resources/serviceui_it.class" />
     <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -719,13 +765,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/refinedDataModel.java" />
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/jre/lib/rt.jar!/sun/print/resources/serviceui_it.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/jre/lib/rt.jar!/sun/print/resources/serviceui_it.class" />
     <entry file="file://$PROJECT_DIR$/mongoDao/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -734,21 +774,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDatamodel/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-sources.jar!/com/mongodb/MongoCredential.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="152" column="34" lean-forward="false" selection-start-line="152" selection-start-column="34" selection-end-line="152" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-sources.jar!/com/mongodb/MongoCredential.java" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -757,80 +783,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/MongoUtils.java" />
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="1913" column="19" lean-forward="false" selection-start-line="1913" selection-start-column="19" selection-end-line="1913" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/reflect/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-615">
-          <caret line="84" column="59" lean-forward="false" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/reflect/AccessibleObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="189" column="65" lean-forward="false" selection-start-line="189" selection-start-column="55" selection-end-line="189" selection-end-column="65" />
-          <folding>
-            <element signature="e#6818#6819#0" expanded="false" />
-            <element signature="e#6900#6901#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Class.java" />
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/reflect/Field.java" />
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/reflect/AccessibleObject.java" />
     <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/JsonField.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-sources.jar!/com/mongodb/client/MongoDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="122" column="30" lean-forward="false" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.1/mongo-java-driver-3.4.1.jar!/org/bson/Document.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.1/mongo-java-driver-3.4.1.jar!/com/mongodb/client/MongoDatabase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-          <folding>
-            <marker date="1520611072835" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1520611072835" expanded="false" signature="142:520" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-sources.jar!/com/mongodb/client/MongoCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14922">
-          <caret line="871" column="38" lean-forward="false" selection-start-line="871" selection-start-column="32" selection-end-line="871" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-sources.jar!/com/mongodb/client/MongoDatabase.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.1/mongo-java-driver-3.4.1.jar!/org/bson/Document.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.1/mongo-java-driver-3.4.1.jar!/com/mongodb/client/MongoDatabase.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-sources.jar!/com/mongodb/client/MongoCollection.java" />
     <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedTrackDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -838,66 +802,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#1866#1867#0" expanded="true" />
-            <element signature="e#1919#1920#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedArtistDao.java">
+    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/ClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedPlaylistDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        <state relative-caret-position="119">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedTrackDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedUserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedPlaylist.java">
+    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/BaseMapper.java" />
+    <entry file="file://$PROJECT_DIR$/mongoDatamodel/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedArtist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedTrackDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedTrack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="527">
+          <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -906,7 +874,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
+        <state relative-caret-position="136">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -914,18 +882,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/ClientHandler.java">
+    <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedPlaylist.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="102">
+          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedArtist.java">
+    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedArtistDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        <state relative-caret-position="153">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -934,8 +902,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/JsontoRefinedMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="433">
+          <caret line="92" column="39" lean-forward="true" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

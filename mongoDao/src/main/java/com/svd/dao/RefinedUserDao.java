@@ -1,9 +1,9 @@
 package com.svd.dao;
 
 import com.svd.ClientHandler;
-import refinedDataModels.RefinedPlaylist;
+import refinedDataModels.RefinedUser;
 
-public class RefinedUserDao extends BaseDao<RefinedPlaylist> {
+public class RefinedUserDao extends BaseDao<RefinedUser> {
     RefinedUserDao(ClientHandler clientHandler) {
         super(clientHandler);
     }

@@ -1,6 +1,9 @@
 package com.svd.dao;
 
-public class RefinedTrackDao extends BaseDao<RefinedPlaylist> {
+import com.svd.ClientHandler;
+import refinedDataModels.RefinedTrack;
+
+public class RefinedTrackDao extends BaseDao<RefinedTrack> {
  RefinedTrackDao(ClientHandler clientHandler) {
    super(clientHandler);
  }
