@@ -2,7 +2,6 @@ package com.svd.dao;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 import com.svd.ClientHandler;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +14,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
-import static com.mongodb.client.model.Filters.in;
+import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
+
 @Slf4j
 @Data
 public class BaseDao<T> {
@@ -31,17 +31,21 @@ public class BaseDao<T> {
         return clientHandler.getMongoDB().getCollection(collectionName);
     }
 
-    public void saveEntryToDatabase(Class<T> inputClass, Object inputObject, MongoCollection<Document> collection){
+    public void saveEntryToDatabase(Class<T> inputClass, Object inputObject, MongoCollection<Document> collection) {
         List<Field> fields = Arrays.asList(inputClass.getDeclaredFields());
         Document doc = new Document();
         for (Field field : fields) {
             field.setAccessible(true);
-            Method getter = null;
             try {
-                getter = inputClass.getDeclaredMethod("get{}", inputClass);
-                doc.append(field.getName(), getter.invoke(inputObject));
-            } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
-                log.error("Error Mapping");
+                Method getter = null;
+                if (field.getType().getName().equals("boolean")) {
+                    getter = inputClass.getDeclaredMethod("is" + field.getName().substring(0, 1).toUpperCase() + field.getName().substring(1));
+                }else{
+                    getter = inputClass.getDeclaredMethod("get" + field.getName().substring(0, 1).toUpperCase() + field.getName().substring(1));
+                }
+                doc.append(field.getName(),invokeSimpleGetter(getter,inputObject));
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
             }
         }
         collection.insertOne(doc);
@@ -59,7 +63,7 @@ public class BaseDao<T> {
     }
 
 
-   public Object retrieveEntryById(String itemId, String collectionName) {
+    public Document retrieveEntryById(String itemId, String collectionName) {
         BasicDBObject searchQuery = new BasicDBObject();
         searchQuery.put("id", itemId);
         return getCollection(collectionName).find(searchQuery).first();

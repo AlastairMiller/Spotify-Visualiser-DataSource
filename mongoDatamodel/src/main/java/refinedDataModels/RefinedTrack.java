@@ -16,9 +16,8 @@ import java.util.List;
 @AllArgsConstructor
 public class RefinedTrack extends Document{
     private String id;
-    private List<String> refinedAlbumsIds;
-    private List<String> refinedArtistsIds;
-    private List<String> refinedPlaylistsIds;
+    private List<String> refinedAlbumIds;
+    private List<String> refinedArtistIds;
     private int discNum;
     private int durationMs;
     private boolean explicit;

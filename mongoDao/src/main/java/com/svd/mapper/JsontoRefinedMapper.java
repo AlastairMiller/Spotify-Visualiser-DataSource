@@ -13,6 +13,8 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 @Slf4j
 public class JsontoRefinedMapper {
@@ -24,7 +26,7 @@ public class JsontoRefinedMapper {
                     document.getString("id"),
                     new URL(document.getString("url")),
                     new ArrayList<>(Arrays.asList(document.getString("genres").split(","))),
-                    new ArrayList<>(Arrays.asList(document.getString("refinedArtistsIds").split(","))),
+                    new ArrayList<>(Arrays.asList(document.getString("refinedArtistIds").split(","))),
                     document.getString("href"),
                     document.getString("name"),
                     document.getString("type"),
@@ -43,11 +45,11 @@ public class JsontoRefinedMapper {
 
     public static RefinedTrack toTrack(Document document) {
         try {
+
             return new RefinedTrack(
                     document.getString("id"),
-                    new ArrayList<>(Arrays.asList(document.getString("refinedArtistsIds").split(","))),
-                    new ArrayList<>(Arrays.asList(document.getString("refinedPlaylistsIds").split(","))),
-                    new ArrayList<>(Arrays.asList(document.getString("genres").split(","))),
+                    new ArrayList<>((Collection<? extends String>) document.get("refinedAlbumIds")),
+                    new ArrayList<>((Collection<? extends String>) document.get("refinedArtistIds")),
                     document.getInteger("discNum"),
                     document.getInteger("durationMs"),
                     document.getBoolean("explicit"),
