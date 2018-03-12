@@ -1,5 +1,6 @@
 package refinedDataModels;
 
+import com.mongodb.BasicDBObject;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RefinedPlaylist implements Serializable {
+public class RefinedPlaylist extends BasicDBObject{
     private String id;
     private URI uri;
     private URL externalURL;

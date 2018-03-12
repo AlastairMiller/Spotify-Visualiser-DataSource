@@ -4,7 +4,12 @@ import com.svd.ClientHandler;
 import refinedDataModels.RefinedTrack;
 
 public class RefinedTrackDao extends BaseDao<RefinedTrack> {
- RefinedTrackDao(ClientHandler clientHandler) {
+ public RefinedTrackDao(ClientHandler clientHandler) {
    super(clientHandler);
  }
+
+
+  public RefinedTrack retrieveEntryById(String itemId) {
+        return (RefinedTrack) super.retrieveEntryById(itemId, "RefinedTracks");
+    }
 }

@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.bson.Document;
 
-import java.io.Serializable;
 import java.net.URI;
 import java.net.URL;
 import java.util.List;
@@ -14,11 +14,11 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RefinedTrack implements Serializable {
+public class RefinedTrack extends Document{
     private String id;
+    private List<String> refinedAlbumsIds;
     private List<String> refinedArtistsIds;
     private List<String> refinedPlaylistsIds;
-    private List<String> availableMarkets;
     private int discNum;
     private int durationMs;
     private boolean explicit;
