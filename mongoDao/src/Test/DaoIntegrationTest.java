@@ -17,6 +17,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import refinedDataModels.RefinedArtist;
 import refinedDataModels.RefinedTrack;
 
 import java.net.MalformedURLException;
@@ -50,7 +51,7 @@ public class DaoIntegrationTest {
         mongodExe = starter.prepare(mongodConfig);
         mongod = mongodExe.start();
         mongoClient = new MongoClient(hostname, port);
-        mongoDao = new BaseDao<RefinedTrack>(new ClientHandler(hostname, port, "embedded"));
+        mongoDao = new BaseDao<>(new ClientHandler(hostname, port, "embedded"));
     }
 
     @After
@@ -61,7 +62,7 @@ public class DaoIntegrationTest {
         }
     }
 
-    void saveExampleSongToDatabase(MongoCollection<org.bson.Document> mongoCollection) {
+    void saveExampleTrackToDatabase(MongoCollection<Document> mongoCollection) {
         RefinedTrack exampleTrack = new RefinedTrack();
         try {
             exampleTrack = RefinedTrack.builder()
@@ -85,13 +86,29 @@ public class DaoIntegrationTest {
         mongoDao.saveEntryToDatabase(RefinedTrack.class, exampleTrack, mongoCollection);
     }
 
-    @Test
-    public void shouldSaveTracktoDb() {
-        MongoCollection<org.bson.Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedTracks");
-        saveExampleSongToDatabase(mongoCollection);
-        assertThat(mongoCollection.count(), Matchers.is(1L));
+    void saveExampleArtistToDatabase(MongoCollection<Document> mongoCollection){
+        RefinedArtist exampleArtist = new RefinedArtist();
+        exampleArtist = RefinedArtist.builder()
+                .id()
+                .externalURL()
+                .genres()
+                .refinedArtistsIds()
+                .href()
+                .name()
+                .type()
+                .followers()
+                .popularity()
+                .uri()
+                .build();
+
     }
 
+    @Test
+    public void shouldSaveTrackToDb() {
+        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedTracks");
+        saveExampleTrackToDatabase(mongoCollection);
+        assertThat(mongoCollection.count(), Matchers.is(1L));
+    }
 
     @Test
     public void shouldReadTrackFromDb() {
@@ -116,12 +133,16 @@ public class DaoIntegrationTest {
             e.printStackTrace();
         }
         MongoCollection<org.bson.Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedTracks");
-        saveExampleSongToDatabase(mongoCollection);
-        long as = mongoCollection.count();
+        saveExampleTrackToDatabase(mongoCollection);
         Object object = mongoDao.retrieveEntryById("3aTrurxagDJfsQRBEOGfMb", "RefinedTracks");
         RefinedTrack actualSong = toTrack((Document) object);
         Assert.assertEquals(expectedSong, actualSong);
 
+    }
+
+    @Test
+    public void shouldSaveArtistToDb(){
+        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedArtists");
     }
 
 }

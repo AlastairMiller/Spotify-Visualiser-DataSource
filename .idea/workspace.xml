@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42215f6a-ccae-4b21-9a41-924cf877c57c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/RefinedtoJsonMapper.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SpotifyVisualiserDataSource.iml" afterPath="$PROJECT_DIR$/SpotifyVisualiserDataSource.iml" />
       <change beforePath="$PROJECT_DIR$/mongoDao/mongoDao.iml" afterPath="$PROJECT_DIR$/mongoDao/mongoDao.iml" />
       <change beforePath="$PROJECT_DIR$/mongoDao/src/Test/DaoIntegrationTest.java" afterPath="$PROJECT_DIR$/mongoDao/src/Test/DaoIntegrationTest.java" />
-      <change beforePath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/BaseDao.java" afterPath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/BaseDao.java" />
-      <change beforePath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedArtistDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedPlaylistDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedTrackDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedUserDao.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/JsontoRefinedMapper.java" afterPath="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/JsontoRefinedMapper.java" />
-      <change beforePath="$PROJECT_DIR$/mongoDatamodel/mongoDatamodel.iml" afterPath="$PROJECT_DIR$/mongoDatamodel/mongoDatamodel.iml" />
-      <change beforePath="$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedTrack.java" afterPath="$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedTrack.java" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,37 +17,61 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="RefinedArtist.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedArtist.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="136">
+                    <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JsontoRefinedMapper.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mongoDatamodel/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsontoRefinedMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/JsontoRefinedMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="51" column="101" lean-forward="false" selection-start-line="51" selection-start-column="101" selection-end-line="51" selection-end-column="101" />
-              <folding />
+            <state relative-caret-position="1360">
+              <caret line="94" column="39" lean-forward="false" selection-start-line="94" selection-start-column="39" selection-end-line="94" selection-end-column="39" />
+              <folding>
+                <marker date="1520882303536" expanded="true" signature="1889:2740" ph="{...}" />
+                <marker date="1520882303536" expanded="true" signature="2798:3571" ph="{...}" />
+                <marker date="1520882303536" expanded="true" signature="3637:4567" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RefinedTrack.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedTrack.java">
+      <file leaf-file-name="DaoIntegrationTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mongoDao/src/Test/DaoIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/BaseDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
-              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+            <state relative-caret-position="404">
+              <caret line="101" column="25" lean-forward="false" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2633#2634#0" expanded="true" />
-                <element signature="e#2687#2688#0" expanded="true" />
+                <element signature="method#shouldSaveTrackToDb#0;class#DaoIntegrationTest#0" expanded="false" />
+                <element signature="method#shouldReadTrackFromDb#0;class#DaoIntegrationTest#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -67,8 +80,8 @@
       <file leaf-file-name="RefinedtoJsonMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/RefinedtoJsonMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="236">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,21 +89,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RefinedArtist.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedArtist.java">
+      <file leaf-file-name="BaseDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/BaseDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="26" lean-forward="true" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+            <state relative-caret-position="850">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <folding>
+                <marker date="1520882303536" expanded="true" signature="2378:2553" ph="{...}" />
+                <marker date="1520882303536" expanded="true" signature="2633:2688" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Class.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_161/src.zip!/java/lang/Class.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34629">
+              <caret line="2124" column="18" lean-forward="false" selection-start-line="2124" selection-start-column="18" selection-end-line="2124" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DaoIntegrationTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mongoDao/src/Test/DaoIntegrationTest.java">
+      <file leaf-file-name="ClientHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/ClientHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,11 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestMethodRunner.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.0/junit-4.0.jar!/org/junit/internal/runners/TestMethodRunner.class">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mongoDao/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-383">
-              <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state relative-caret-position="646">
+              <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -160,8 +186,8 @@
         <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedArtistDao.java" />
         <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedUserDao.java" />
         <option value="$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedTrack.java" />
-        <option value="$PROJECT_DIR$/mongoDao/src/Test/DaoIntegrationTest.java" />
         <option value="$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/JsontoRefinedMapper.java" />
+        <option value="$PROJECT_DIR$/mongoDao/src/Test/DaoIntegrationTest.java" />
       </list>
     </option>
   </component>
@@ -178,11 +204,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="y" value="-2" />
-    <option name="width" value="1920" />
-    <option name="height" value="1202" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="960" />
+    <option name="width" value="964" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -201,42 +226,43 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -244,8 +270,8 @@
               <item name="svd" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -254,8 +280,8 @@
               <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -264,41 +290,41 @@
               <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDatamodel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDatamodel" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDatamodel" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDatamodel" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="SpotifyVisualiserDataSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpotifyVisualiserDataSource" type="462c0819:PsiDirectoryNode" />
+              <item name="Spotify-Visualiser-DataSource" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Spotify-Visualiser-DataSource" type="462c0819:PsiDirectoryNode" />
               <item name="mongoDatamodel" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -310,7 +336,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -350,6 +375,129 @@
       <recent name="$PROJECT_DIR$/src/main/java/refinedDataModels" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SpotifyVisualiserDataSource.iml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mongoDao/mongoDao.iml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mongoDao/src/Test/DaoIntegrationTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/BaseDao.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/JsontoRefinedMapper.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mongoDatamodel/mongoDatamodel.iml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedTrack.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pom.xml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/RefinedtoJsonMapper.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedArtistDao.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedPlaylistDao.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedTrackDao.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedUserDao.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RubyModuleManagerSettings">
     <option name="blackListedRootsPaths">
       <list>
@@ -369,7 +517,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DaoIntegrationTest.shouldReadTrackFromDb">
+  <component name="RunManager" selected="JUnit.DaoIntegrationTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -450,14 +598,14 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="DaoIntegrationTest.shouldSaveTracktoDb" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DaoIntegrationTest.shouldSaveTrackToDb" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="mongoDao" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="DaoIntegrationTest" />
-      <option name="METHOD_NAME" value="shouldSaveTracktoDb" />
+      <option name="METHOD_NAME" value="shouldSaveTrackToDb" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -544,15 +692,15 @@
     </configuration>
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JUnit.DaoIntegrationTest.shouldCreateTrackInEmbeddedMongoDb" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.DaoIntegrationTest.shouldSaveTracktoDb" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DaoIntegrationTest.shouldSaveTrackToDb" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.DaoIntegrationTest" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.DaoIntegrationTest.shouldReadTrackFromDb" />
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.DaoIntegrationTest.shouldReadTrackFromDb" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.DaoIntegrationTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DaoIntegrationTest.shouldSaveTracktoDb" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DaoIntegrationTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DaoIntegrationTest.shouldReadTrackFromDb" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DaoIntegrationTest.shouldSaveTrackToDb" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.DaoIntegrationTest.shouldCreateTrackInEmbeddedMongoDb" />
       </list>
     </recent_temporary>
@@ -619,11 +767,11 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DaoIntegrationTest_shouldReadTrackFromDb - 2018.03.12 at 17h 16m 52s.xml">
-      <configuration name="DaoIntegrationTest.shouldReadTrackFromDb" configurationId="JUnit" />
+    <history-entry file="DaoIntegrationTest - 2018.03.12 at 19h 25m 47s.xml">
+      <configuration name="DaoIntegrationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DaoIntegrationTest_shouldReadTrackFromDb - 2018.03.12 at 17h 18m 58s.xml">
-      <configuration name="DaoIntegrationTest.shouldReadTrackFromDb" configurationId="JUnit" />
+    <history-entry file="DaoIntegrationTest - 2018.03.12 at 19h 26m 34s.xml">
+      <configuration name="DaoIntegrationTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="DaoIntegrationTest_shouldReadTrackFromDb - 2018.03.12 at 17h 19m 10s.xml">
       <configuration name="DaoIntegrationTest.shouldReadTrackFromDb" configurationId="JUnit" />
@@ -651,40 +799,89 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78028000" />
+    <option name="totallyTimeSpent" value="81314000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-2" width="1920" height="1202" extended-state="6" />
+    <frame x="960" y="0" width="964" height="1048" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32791588" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32713348" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40809628" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34285715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3288719" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288719" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2289221" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298279" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30688336" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3288719" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288719" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2289221" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298279" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-    </layout>
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1622449" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -709,7 +906,7 @@
           <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="47" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -789,14 +986,7 @@
     <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.1/mongo-java-driver-3.4.1.jar!/org/bson/Document.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.4.1/mongo-java-driver-3.4.1.jar!/com/mongodb/client/MongoDatabase.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-sources.jar!/com/mongodb/client/MongoCollection.java" />
-    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedTrackDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedTrackDao.java" />
     <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/BaseMapper.java" />
     <entry file="file://$PROJECT_DIR$/mongoDao/mongoDao.iml">
       <provider selected="true" editor-type-id="text-editor">
@@ -833,7 +1023,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_161/src.zip!/java/lang/Class.java" />
+    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_161/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34629">
+          <caret line="2124" column="18" lean-forward="false" selection-start-line="2124" selection-start-column="18" selection-end-line="2124" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -841,18 +1038,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDatamodel/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mongoDao/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        <state relative-caret-position="646">
+          <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -867,48 +1056,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/ClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-sources.jar!/com/mongodb/MongoCollectionImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="258" column="0" lean-forward="false" selection-start-line="258" selection-start-column="0" selection-end-line="258" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
           <folding>
-            <element signature="e#10812#10813#0" expanded="false" />
-            <element signature="e#10930#10931#0" expanded="false" />
-            <element signature="e#10998#10999#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-sources.jar!/com/mongodb/FindIterableImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="194" column="0" lean-forward="false" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-sources.jar!/com/mongodb/MongoCollectionImpl.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-sources.jar!/com/mongodb/FindIterableImpl.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.0/junit-4.0.jar!/org/junit/internal/runners/BeforeAndAfterRunner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/reflect/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="54" column="40" lean-forward="true" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/reflect/Field.java" />
     <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedAlbum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -933,69 +1098,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-sources.jar!/org/bson/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="50" column="46" lean-forward="false" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedUserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="12" column="7" lean-forward="false" selection-start-line="10" selection-start-column="50" selection-end-line="12" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedArtist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="26" lean-forward="true" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedArtistDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="12" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedPlaylistDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="12" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedTrackDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3-sources.jar!/org/bson/Document.java" />
+    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedUserDao.java" />
+    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedArtistDao.java" />
+    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedPlaylistDao.java" />
+    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/RefinedTrackDao.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.0/junit-4.0.jar!/org/junit/internal/runners/TestMethodRunner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-383">
           <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/RefinedtoJsonMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1007,33 +1118,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mongoDao/src/Test/DaoIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/dao/BaseDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state relative-caret-position="850">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2633#2634#0" expanded="true" />
-            <element signature="e#2687#2688#0" expanded="true" />
+            <marker date="1520882303536" expanded="true" signature="2378:2553" ph="{...}" />
+            <marker date="1520882303536" expanded="true" signature="2633:2688" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/JsontoRefinedMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="51" column="101" lean-forward="false" selection-start-line="51" selection-start-column="101" selection-end-line="51" selection-end-column="101" />
+        <state relative-caret-position="1360">
+          <caret line="94" column="39" lean-forward="false" selection-start-line="94" selection-start-column="39" selection-end-line="94" selection-end-column="39" />
+          <folding>
+            <marker date="1520882303536" expanded="true" signature="1889:2740" ph="{...}" />
+            <marker date="1520882303536" expanded="true" signature="2798:3571" ph="{...}" />
+            <marker date="1520882303536" expanded="true" signature="3637:4567" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongoDao/src/main/java/com/svd/mapper/RefinedtoJsonMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongoDatamodel/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongoDatamodel/src/main/java/refinedDataModels/RefinedArtist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongoDao/src/Test/DaoIntegrationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="101" column="25" lean-forward="false" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#shouldSaveTrackToDb#0;class#DaoIntegrationTest#0" expanded="false" />
+            <element signature="method#shouldReadTrackFromDb#0;class#DaoIntegrationTest#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
