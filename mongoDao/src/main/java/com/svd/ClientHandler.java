@@ -12,13 +12,13 @@ public class ClientHandler {
     private final MongoDatabase mongoDB;
 
     public ClientHandler(String host, int port, String databaseName) {
-        mongoClient = new MongoClient(host , port);
+        mongoClient = new MongoClient(host, port);
         mongoDB = mongoClient.getDatabase(databaseName);
     }
 
-    public ClientHandler(String host, int port, String userName, String databaseName, char[] password){
+    public ClientHandler(String host, int port, String userName, String databaseName, char[] password) {
         MongoCredential credential = MongoCredential.createCredential(userName, databaseName, password);
-        mongoClient = new MongoClient(host , port);
+        mongoClient = new MongoClient(host, port);
         mongoDB = mongoClient.getDatabase(databaseName);
     }
 }

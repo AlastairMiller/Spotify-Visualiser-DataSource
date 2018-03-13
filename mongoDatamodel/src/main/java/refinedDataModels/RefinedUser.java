@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import java.net.URI;
 import java.net.URL;
-import java.util.List;
 
 @Data
 @AllArgsConstructor

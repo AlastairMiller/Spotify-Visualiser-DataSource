@@ -25,5 +25,4 @@ public class RefinedAlbum {
     private URL externalURL;
     private URL href;
     private URI uri;
-
 }

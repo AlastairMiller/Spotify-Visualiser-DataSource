@@ -19,7 +19,6 @@ import org.junit.Before;
 import org.junit.Test;
 import refinedDataModels.*;
 
-import javax.print.Doc;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -66,14 +65,20 @@ public class DaoIntegrationTest {
         }
     }
 
-    void saveExampleAlbumToDatabase(MongoCollection<Document> mongoCollection) {
+    private void saveExampleAlbumToDatabase(MongoCollection<Document> mongoCollection) {
         RefinedAlbum exampleAlbum = new RefinedAlbum();
         try {
             exampleAlbum = RefinedAlbum.builder()
                     .id("6fpZzsdzd04nqiDPWnF2iw")
                     .name("All I Need (Deluxe Version)")
                     .artistsIds(Collections.singletonList("7qRll6DYV06u2VuRPAVqug"))
-                    .trackIds(new ArrayList<String>(Arrays.asList("4GKmx23LpQNXkamXDoZyFE", "08pOoVfZ8BsLCfXxRsci2Y", "72nV5T9HAbKc1sLka9NF6x", "69Q9unT80s08dUolhcgr4T", "5bLgPkbqC97jVe6rJlpzLJ", "7b63AiSD37IYRJBrEQcfdR", "6iudA5joUv7hmPQYFIVEB5", "2SjYwtyKUTQQ8WoxX8uX9w", "1621HusJy3pKPrynU8nmB3", "3eDIItHQg5S69tfVR12RYh", "5gLCxvVic5y7PBLDzBsgmd", "63jqw4EEcCxUIqJm4514ZB", "2umo57mtmQOEoCza8OncR0", "1puaMbxVMGdZnPTk1rq19X", "1puaMbxVMGdZnPTk1rq19X", "27oi5r6fj4aPcV86Z40Wrm")))
+                    .trackIds(new ArrayList<String>(Arrays.asList(
+                            "4GKmx23LpQNXkamXDoZyFE", "08pOoVfZ8BsLCfXxRsci2Y", "72nV5T9HAbKc1sLka9NF6x",
+                            "69Q9unT80s08dUolhcgr4T", "5bLgPkbqC97jVe6rJlpzLJ", "7b63AiSD37IYRJBrEQcfdR",
+                            "6iudA5joUv7hmPQYFIVEB5", "2SjYwtyKUTQQ8WoxX8uX9w", "1621HusJy3pKPrynU8nmB3",
+                            "3eDIItHQg5S69tfVR12RYh", "5gLCxvVic5y7PBLDzBsgmd", "63jqw4EEcCxUIqJm4514ZB",
+                            "2umo57mtmQOEoCza8OncR0", "1puaMbxVMGdZnPTk1rq19X", "1puaMbxVMGdZnPTk1rq19X",
+                            "27oi5r6fj4aPcV86Z40Wrm")))
                     .imageURL(new URL("https://i.scdn.co/image/fb49d9c64b1e8b2af45498ad23603a749cd1b177"))
                     .releaseDate(new Date(1454630400000L))
                     .popularity(61)
@@ -88,7 +93,7 @@ public class DaoIntegrationTest {
 
     }
 
-    void saveExampleTrackToDatabase(MongoCollection<Document> mongoCollection) {
+    private void saveExampleTrackToDatabase(MongoCollection<Document> mongoCollection) {
         RefinedTrack exampleTrack = new RefinedTrack();
         try {
             exampleTrack = RefinedTrack.builder()
@@ -112,7 +117,7 @@ public class DaoIntegrationTest {
         mongoDao.saveEntryToDatabase(RefinedTrack.class, exampleTrack, mongoCollection);
     }
 
-    void saveExampleArtistToDatabase(MongoCollection<Document> mongoCollection) {
+    private void saveExampleArtistToDatabase(MongoCollection<Document> mongoCollection) {
         RefinedArtist exampleArtist = new RefinedArtist();
         try {
             exampleArtist = RefinedArtist.builder()
@@ -137,7 +142,7 @@ public class DaoIntegrationTest {
         mongoDao.saveEntryToDatabase(RefinedArtist.class, exampleArtist, mongoCollection);
     }
 
-    void saveExamplePlaylistToDatabase(MongoCollection<Document> mongoCollection) {
+    private void saveExamplePlaylistToDatabase(MongoCollection<Document> mongoCollection) {
         RefinedPlaylist examplePlaylist = new RefinedPlaylist();
         try {
             examplePlaylist = RefinedPlaylist.builder()
@@ -149,7 +154,9 @@ public class DaoIntegrationTest {
                     .name("SPS Test playlist")
                     .description("&lt;Test&gt;")
                     .refinedUserId("millersinc")
-                    .refinedTrackIds(new ArrayList<String>(Arrays.asList("5V3ZQQtWehePZs2ztZvyAi", "2T5cJy6jrHaciEUExBvxs8", "5dKyZWlgjWw1oJgLa4GCZD", "5owRsFtcu8vxXYHvNyqdRr", "5aAx2yezTd8zXrkmtKl66Z")))
+                    .refinedTrackIds(new ArrayList<String>(Arrays.asList(
+                            "5V3ZQQtWehePZs2ztZvyAi", "2T5cJy6jrHaciEUExBvxs8", "5dKyZWlgjWw1oJgLa4GCZD",
+                            "5owRsFtcu8vxXYHvNyqdRr", "5aAx2yezTd8zXrkmtKl66Z")))
                     .uri(new URI("spotify:user:millersinc"))
                     .build();
         } catch (MalformedURLException | URISyntaxException e) {
@@ -158,7 +165,7 @@ public class DaoIntegrationTest {
         mongoDao.saveEntryToDatabase(RefinedPlaylist.class, examplePlaylist, mongoCollection);
     }
 
-    void saveExampleUserToDatabase(MongoCollection<Document> mongoCollection) {
+    private void saveExampleUserToDatabase(MongoCollection<Document> mongoCollection) {
         RefinedUser exampleUser = new RefinedUser();
         try {
             exampleUser = RefinedUser.builder()
@@ -191,7 +198,13 @@ public class DaoIntegrationTest {
                     .id("6fpZzsdzd04nqiDPWnF2iw")
                     .name("All I Need (Deluxe Version)")
                     .artistsIds(Collections.singletonList("7qRll6DYV06u2VuRPAVqug"))
-                    .trackIds(new ArrayList<String>(Arrays.asList("4GKmx23LpQNXkamXDoZyFE", "08pOoVfZ8BsLCfXxRsci2Y", "72nV5T9HAbKc1sLka9NF6x", "69Q9unT80s08dUolhcgr4T", "5bLgPkbqC97jVe6rJlpzLJ", "7b63AiSD37IYRJBrEQcfdR", "6iudA5joUv7hmPQYFIVEB5", "2SjYwtyKUTQQ8WoxX8uX9w", "1621HusJy3pKPrynU8nmB3", "3eDIItHQg5S69tfVR12RYh", "5gLCxvVic5y7PBLDzBsgmd", "63jqw4EEcCxUIqJm4514ZB", "2umo57mtmQOEoCza8OncR0", "1puaMbxVMGdZnPTk1rq19X", "1puaMbxVMGdZnPTk1rq19X", "27oi5r6fj4aPcV86Z40Wrm")))
+                    .trackIds(new ArrayList<String>(Arrays.asList(
+                            "4GKmx23LpQNXkamXDoZyFE", "08pOoVfZ8BsLCfXxRsci2Y", "72nV5T9HAbKc1sLka9NF6x",
+                            "69Q9unT80s08dUolhcgr4T", "5bLgPkbqC97jVe6rJlpzLJ", "7b63AiSD37IYRJBrEQcfdR",
+                            "6iudA5joUv7hmPQYFIVEB5", "2SjYwtyKUTQQ8WoxX8uX9w", "1621HusJy3pKPrynU8nmB3",
+                            "3eDIItHQg5S69tfVR12RYh", "5gLCxvVic5y7PBLDzBsgmd", "63jqw4EEcCxUIqJm4514ZB",
+                            "2umo57mtmQOEoCza8OncR0", "1puaMbxVMGdZnPTk1rq19X", "1puaMbxVMGdZnPTk1rq19X",
+                            "27oi5r6fj4aPcV86Z40Wrm")))
                     .imageURL(new URL("https://i.scdn.co/image/fb49d9c64b1e8b2af45498ad23603a749cd1b177"))
                     .releaseDate(new Date(1454630400000L))
                     .popularity(61)
@@ -303,7 +316,9 @@ public class DaoIntegrationTest {
                     .name("SPS Test playlist")
                     .description("&lt;Test&gt;")
                     .refinedUserId("millersinc")
-                    .refinedTrackIds(new ArrayList<String>(Arrays.asList("5V3ZQQtWehePZs2ztZvyAi", "2T5cJy6jrHaciEUExBvxs8", "5dKyZWlgjWw1oJgLa4GCZD", "5owRsFtcu8vxXYHvNyqdRr", "5aAx2yezTd8zXrkmtKl66Z")))
+                    .refinedTrackIds(new ArrayList<String>(Arrays.asList(
+                            "5V3ZQQtWehePZs2ztZvyAi", "2T5cJy6jrHaciEUExBvxs8", "5dKyZWlgjWw1oJgLa4GCZD",
+                            "5owRsFtcu8vxXYHvNyqdRr", "5aAx2yezTd8zXrkmtKl66Z")))
                     .uri(new URI("spotify:user:millersinc"))
                     .build();
         } catch (MalformedURLException | URISyntaxException e) {
@@ -317,14 +332,14 @@ public class DaoIntegrationTest {
     }
 
     @Test
-    public void shouldSaveUserToDb(){
+    public void shouldSaveUserToDb() {
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedUser");
         saveExampleUserToDatabase(mongoCollection);
         assertThat(mongoCollection.count(), Matchers.is(1L));
     }
 
     @Test
-    public void shouldReadSavedUserFromDb(){
+    public void shouldReadSavedUserFromDb() {
         RefinedUser expectedUser = new RefinedUser();
         try {
             expectedUser = RefinedUser.builder()
