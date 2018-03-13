@@ -15,12 +15,13 @@ import java.util.List;
 @Builder
 public class RefinedPlaylist {
     private String id;
-    private URI uri;
     private URL externalURL;
     private Integer numOfFollowers;
     private URL href;
-    private List<String> imageURLs;
+    private URL imageURL;
     private String name;
+    private String description;
     private String refinedUserId;
     private List<String> refinedTrackIds;
+    private URI uri;
 }

@@ -106,17 +106,18 @@ public class JsontoRefinedMapper {
 
     public static RefinedPlaylist toPlaylist(Document document) {
         try {
-            return new RefinedPlaylist(
-                    document.getString("id"),
-                    new URI(document.getString("uri")),
-                    new URL(document.getString("externalURL")),
-                    document.getInteger("numOfFollowers"),
-                    new URL(document.getString("href")),
-                    new ArrayList<>(Arrays.asList(document.getString("imageUrls").split(","))),
-                    document.getString("name"),
-                    document.getString("refinedUserId"),
-                    new ArrayList<>(Arrays.asList(document.getString("refinedTracksIds").split(",")))
-            );
+            return RefinedPlaylist.builder()
+                    .id(document.getString("id"))
+                    .externalURL(new URL(document.getString("externalURL")))
+                    .numOfFollowers(document.getInteger("numOfFollowers"))
+                    .href(new URL(document.getString("href")))
+                    .imageURL(new URL(document.getString("imageURL")))
+                    .name(document.getString("name"))
+                    .description(document.getString("description"))
+                    .refinedUserId(document.getString("refinedUserId"))
+                    .refinedTrackIds(new ArrayList<String>((Collection<? extends String>) document.get("refinedTrackIds")))
+                    .uri(new URI(document.getString("uri")))
+                    .build();
         } catch (NullPointerException e) {
             log.error("One or more fields are empty");
             return null;
