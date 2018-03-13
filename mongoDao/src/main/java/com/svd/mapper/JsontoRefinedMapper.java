@@ -2,10 +2,7 @@ package com.svd.mapper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.bson.Document;
-import refinedDataModels.RefinedArtist;
-import refinedDataModels.RefinedPlaylist;
-import refinedDataModels.RefinedTrack;
-import refinedDataModels.RefinedUser;
+import refinedDataModels.*;
 
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -14,22 +11,39 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 
 @Slf4j
 public class JsontoRefinedMapper {
 
+    public static RefinedAlbum toAlbum(Document document) {
+        try {
+            return RefinedAlbum.builder()
+                    .id(document.getString("id"))
+                    .name(document.getString("name"))
+                    .artistsIds(new ArrayList<>((Collection<? extends String>) document.get("artistsIds")))
+                    .trackIds(new ArrayList<>((Collection<? extends String>) document.get("trackIds")))
+                    .imageURL(new URL(document.getString("imageURL")))
+                    .releaseDate(document.getDate("releaseDate"))
+                    .popularity(document.getInteger("popularity"))
+                    .externalURL(new URL(document.getString("externalURL")))
+                    .href(new URL(document.getString("href")))
+                    .uri(new URI(document.getString("uri")))
+                    .build();
+        } catch (MalformedURLException | URISyntaxException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
     public static RefinedArtist toArtist(Document document) {
         try {
             return new RefinedArtist(
                     document.getString("id"),
-                    new URL(document.getString("url")),
-                    new ArrayList<>(Arrays.asList(document.getString("genres").split(","))),
-                    new ArrayList<>(Arrays.asList(document.getString("refinedArtistIds").split(","))),
-                    document.getString("href"),
+                    new URL(document.getString("externalURL")),
+                    new ArrayList<>((Collection<? extends String>) document.get("genres")),
+                    new ArrayList<>((Collection<? extends String>) document.get("refinedAlbumIds")),
+                    new URL(document.getString("href")),
                     document.getString("name"),
-                    document.getString("type"),
                     document.getInteger("followers"),
                     document.getInteger("popularity"),
                     new URI(document.getString("uri"))
@@ -38,7 +52,7 @@ public class JsontoRefinedMapper {
             log.error("One or more fields are empty");
             return null;
         } catch (MalformedURLException | URISyntaxException e) {
-            log.error("Malformed data from database");
+            log.error("Malformed Artist URL/URI from database");
             return null;
         }
     }
@@ -54,7 +68,7 @@ public class JsontoRefinedMapper {
                     document.getInteger("durationMs"),
                     document.getBoolean("explicit"),
                     new URL(document.getString("externalURL")),
-                    document.getString("href"),
+                    new URL(document.getString("href")),
                     document.getString("name"),
                     new URL(document.getString("previewURL")),
                     document.getInteger("trackNumber"),
@@ -65,7 +79,7 @@ public class JsontoRefinedMapper {
             log.error("One or more fields are empty");
             return null;
         } catch (MalformedURLException | URISyntaxException e) {
-            log.error("Malformed data from database");
+            log.error("Malformed Track URL/URI from database");
             return null;
         }
     }
@@ -78,14 +92,14 @@ public class JsontoRefinedMapper {
                     document.getString("displayName"),
                     new URL(document.getString("externalURL")),
                     document.getInteger("numOfFollowers"),
-                    document.getString("href"),
+                    new URL(document.getString("href")),
                     new ArrayList<>(Arrays.asList(document.getString("imageUrls").split(",")))
             );
         } catch (NullPointerException e) {
             log.error("One or more fields are empty");
             return null;
         } catch (MalformedURLException | URISyntaxException e) {
-            log.error("Malformed data from database");
+            log.error("Malformed User URL/URI from database");
             return null;
         }
     }
@@ -97,7 +111,7 @@ public class JsontoRefinedMapper {
                     new URI(document.getString("uri")),
                     new URL(document.getString("externalURL")),
                     document.getInteger("numOfFollowers"),
-                    document.getString("href"),
+                    new URL(document.getString("href")),
                     new ArrayList<>(Arrays.asList(document.getString("imageUrls").split(","))),
                     document.getString("name"),
                     document.getString("refinedUserId"),
@@ -107,7 +121,7 @@ public class JsontoRefinedMapper {
             log.error("One or more fields are empty");
             return null;
         } catch (MalformedURLException | URISyntaxException e) {
-            log.error("Malformed data from database");
+            log.error("Malformed Playlist URL/URI from database");
             return null;
         }
     }

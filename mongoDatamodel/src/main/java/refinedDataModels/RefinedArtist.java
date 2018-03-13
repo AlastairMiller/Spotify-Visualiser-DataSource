@@ -15,14 +15,13 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RefinedArtist implements Serializable {
+public class RefinedArtist {
     private String id;
     private URL externalURL;
     private List<String> genres;
-    private List<String> refinedArtistsIds;
-    private String href;
+    private List<String> refinedAlbumIds;
+    private URL href;
     private String name;
-    private String type;
     private int followers;
     private int popularity;
     private URI uri;
