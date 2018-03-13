@@ -30,6 +30,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 
+import static com.svd.mapper.JsontoRefinedMapper.toAlbum;
 import static com.svd.mapper.JsontoRefinedMapper.toArtist;
 import static com.svd.mapper.JsontoRefinedMapper.toTrack;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -140,6 +141,39 @@ public class DaoIntegrationTest {
     }
 
     @Test
+    public void shouldSaveAlbumToDb() {
+        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedAlbums");
+        saveExampleAlbumToDatabase(mongoCollection);
+        assertThat(mongoCollection.count(), Matchers.is(1L));
+    }
+
+    @Test
+    public void shouldReadSavedAlbumFromDb(){
+        RefinedAlbum expectedAlbum = new RefinedAlbum();
+        try {
+            expectedAlbum =  RefinedAlbum.builder()
+                    .id("6fpZzsdzd04nqiDPWnF2iw")
+                    .name("All I Need (Deluxe Version)")
+                    .artistsIds(Collections.singletonList("7qRll6DYV06u2VuRPAVqug"))
+                    .trackIds(new ArrayList<String>(Arrays.asList("4GKmx23LpQNXkamXDoZyFE", "08pOoVfZ8BsLCfXxRsci2Y", "72nV5T9HAbKc1sLka9NF6x", "69Q9unT80s08dUolhcgr4T", "5bLgPkbqC97jVe6rJlpzLJ", "7b63AiSD37IYRJBrEQcfdR", "6iudA5joUv7hmPQYFIVEB5", "2SjYwtyKUTQQ8WoxX8uX9w", "1621HusJy3pKPrynU8nmB3", "3eDIItHQg5S69tfVR12RYh", "5gLCxvVic5y7PBLDzBsgmd", "63jqw4EEcCxUIqJm4514ZB", "2umo57mtmQOEoCza8OncR0", "1puaMbxVMGdZnPTk1rq19X", "1puaMbxVMGdZnPTk1rq19X", "27oi5r6fj4aPcV86Z40Wrm")))
+                    .imageURL(new URL("https://i.scdn.co/image/fb49d9c64b1e8b2af45498ad23603a749cd1b177"))
+                    .releaseDate(new Date(1454630400000L))
+                    .popularity(61)
+                    .externalURL(new URL("https://open.spotify.com/album/6fpZzsdzd04nqiDPWnF2iw"))
+                    .href(new URL("https://api.spotify.com/v1/albums/6fpZzsdzd04nqiDPWnF2iw"))
+                    .uri(new URI("spotify:album:6fpZzsdzd04nqiDPWnF2iw"))
+                    .build();
+        } catch (MalformedURLException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedAlbums");
+        saveExampleAlbumToDatabase(mongoCollection);
+        Object object = mongoDao.retrieveEntryById("6fpZzsdzd04nqiDPWnF2iw", "RefinedAlbums");
+        RefinedAlbum actualAlbum = toAlbum((Document) object);
+        Assert.assertEquals(expectedAlbum, actualAlbum);
+    }
+
+    @Test
     public void shouldSaveTrackToDb() {
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedTracks");
         saveExampleTrackToDatabase(mongoCollection);
@@ -173,7 +207,6 @@ public class DaoIntegrationTest {
         Object object = mongoDao.retrieveEntryById("3aTrurxagDJfsQRBEOGfMb", "RefinedTracks");
         RefinedTrack actualSong = toTrack((Document) object);
         Assert.assertEquals(expectedSong, actualSong);
-
     }
 
     @Test
