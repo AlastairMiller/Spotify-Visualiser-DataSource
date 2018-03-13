@@ -37,7 +37,6 @@ public class DaoIntegrationTest {
 
     private MongodExecutable mongodExe;
     private MongodProcess mongod;
-    private MongoClient mongoClient;
     private BaseDao mongoDao;
     private String hostname = "127.0.0.1";
     private int port = 12345;
@@ -53,8 +52,8 @@ public class DaoIntegrationTest {
 
         mongodExe = starter.prepare(mongodConfig);
         mongod = mongodExe.start();
-        mongoClient = new MongoClient(hostname, port);
-        mongoDao = new BaseDao<>(new ClientHandler(hostname, port, "embedded"));
+        MongoClient mongoClient = new MongoClient(hostname, port);
+        mongoDao = new BaseDao<>(new ClientHandler(hostname, port, DATABASE_NAME));
     }
 
     @After

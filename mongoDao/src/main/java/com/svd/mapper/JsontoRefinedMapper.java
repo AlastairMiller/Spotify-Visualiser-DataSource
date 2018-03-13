@@ -37,17 +37,17 @@ public class JsontoRefinedMapper {
 
     public static RefinedArtist toArtist(Document document) {
         try {
-            return new RefinedArtist(
-                    document.getString("id"),
-                    new URL(document.getString("externalURL")),
-                    new ArrayList<>((Collection<? extends String>) document.get("genres")),
-                    new ArrayList<>((Collection<? extends String>) document.get("refinedAlbumIds")),
-                    new URL(document.getString("href")),
-                    document.getString("name"),
-                    document.getInteger("followers"),
-                    document.getInteger("popularity"),
-                    new URI(document.getString("uri"))
-            );
+            return RefinedArtist.builder()
+                    .id(document.getString("id"))
+                    .externalURL(new URL(document.getString("externalURL")))
+                    .genres( new ArrayList<>((Collection<? extends String>) document.get("genres")))
+                    .refinedAlbumIds(new ArrayList<>((Collection<? extends String>) document.get("refinedAlbumIds")))
+                    .href(new URL(document.getString("href")))
+                    .name( document.getString("name"))
+                    .followers(document.getInteger("followers"))
+                    .popularity( document.getInteger("popularity"))
+                    .uri( new URI(document.getString("uri")))
+                    .build();
         } catch (NullPointerException e) {
             log.error("One or more fields are empty");
             return null;
@@ -59,22 +59,21 @@ public class JsontoRefinedMapper {
 
     public static RefinedTrack toTrack(Document document) {
         try {
-
-            return new RefinedTrack(
-                    document.getString("id"),
-                    new ArrayList<>((Collection<? extends String>) document.get("refinedAlbumIds")),
-                    new ArrayList<>((Collection<? extends String>) document.get("refinedArtistIds")),
-                    document.getInteger("discNum"),
-                    document.getInteger("durationMs"),
-                    document.getBoolean("explicit"),
-                    new URL(document.getString("externalURL")),
-                    new URL(document.getString("href")),
-                    document.getString("name"),
-                    new URL(document.getString("previewURL")),
-                    document.getInteger("trackNumber"),
-                    document.getInteger("popularity"),
-                    new URI(document.getString("uri"))
-            );
+            return RefinedTrack.builder()
+                    .id(document.getString("id"))
+                    .refinedAlbumIds(new ArrayList<>((Collection<? extends String>) document.get("refinedAlbumIds")))
+                    .refinedArtistIds(new ArrayList<>((Collection<? extends String>) document.get("refinedArtistIds")))
+                    .discNum(document.getInteger("discNum"))
+                    .durationMs(document.getInteger("durationMs"))
+                    .explicit(document.getBoolean("explicit"))
+                    .externalURL(new URL(document.getString("externalURL")))
+                    .href(new URL(document.getString("href")))
+                    .name(document.getString("name"))
+                    .previewURL(new URL(document.getString("previewURL")))
+                    .trackNumber(document.getInteger("trackNumber"))
+                    .popularity(document.getInteger("popularity"))
+                    .uri(new URI(document.getString("uri")))
+                    .build();
         } catch (NullPointerException e) {
             log.error("One or more fields are empty");
             return null;
