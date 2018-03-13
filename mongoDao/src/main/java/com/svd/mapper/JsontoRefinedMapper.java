@@ -86,15 +86,15 @@ public class JsontoRefinedMapper {
 
     public static RefinedUser toUser(Document document) {
         try {
-            return new RefinedUser(
-                    document.getString("id"),
-                    new URI(document.getString("uri")),
-                    document.getString("displayName"),
-                    new URL(document.getString("externalURL")),
-                    document.getInteger("numOfFollowers"),
-                    new URL(document.getString("href")),
-                    new ArrayList<>(Arrays.asList(document.getString("imageUrls").split(",")))
-            );
+            return RefinedUser.builder()
+                    .id(document.getString("id"))
+                    .displayName(document.getString("displayName"))
+                    .externalURL(new URL(document.getString("externalURL")))
+                    .numOfFollowers(document.getInteger("numOfFollowers"))
+                    .href(new URL(document.getString("href")))
+                    .imageURL(new URL(document.getString("imageURL")))
+                    .uri(new URI(document.getString("uri")))
+                    .build();
         } catch (NullPointerException e) {
             log.error("One or more fields are empty");
             return null;

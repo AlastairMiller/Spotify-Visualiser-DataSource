@@ -15,10 +15,10 @@ import java.util.List;
 @Builder
 public class RefinedUser {
     private String id;
-    private URI uri;
     private String displayName;
-    private URL externalUrl;
+    private URL externalURL;
     private Integer numOfFollowers;
     private URL href;
-    private List<String> imageUrls;
+    private URL imageURL;
+    private URI uri;
 }

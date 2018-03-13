@@ -17,11 +17,9 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import refinedDataModels.RefinedAlbum;
-import refinedDataModels.RefinedArtist;
-import refinedDataModels.RefinedPlaylist;
-import refinedDataModels.RefinedTrack;
+import refinedDataModels.*;
 
+import javax.print.Doc;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -160,6 +158,24 @@ public class DaoIntegrationTest {
         mongoDao.saveEntryToDatabase(RefinedPlaylist.class, examplePlaylist, mongoCollection);
     }
 
+    void saveExampleUserToDatabase(MongoCollection<Document> mongoCollection) {
+        RefinedUser exampleUser = new RefinedUser();
+        try {
+            exampleUser = RefinedUser.builder()
+                    .id("spotify")
+                    .displayName("Spotify")
+                    .externalURL(new URL("https://open.spotify.com/user/spotify"))
+                    .numOfFollowers(7715336)
+                    .href(new URL("https://api.spotify.com/v1/users/spotify"))
+                    .imageURL(new URL("https://profile-images.scdn.co/images/userprofile/default/3c93d52857ecf3e40c4e8435adb7f9c1da40a0dd"))
+                    .uri(new URI("spotify:user:spotify"))
+                    .build();
+        } catch (MalformedURLException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+        mongoDao.saveEntryToDatabase(RefinedUser.class, exampleUser, mongoCollection);
+    }
+
     @Test
     public void shouldSaveAlbumToDb() {
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedAlbums");
@@ -268,7 +284,7 @@ public class DaoIntegrationTest {
     }
 
     @Test
-    public void shouldSavePlaylistFromDb() {
+    public void shouldSavePlaylistToDb() {
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedPlaylists");
         saveExamplePlaylistToDatabase(mongoCollection);
         assertThat(mongoCollection.count(), Matchers.is(1L));
@@ -298,6 +314,36 @@ public class DaoIntegrationTest {
         Object object = mongoDao.retrieveEntryById("2CTdEa3JWbncC1h8WjnuxZ", "RefinedPlaylists");
         RefinedPlaylist actualPlaylist = toPlaylist((Document) object);
         Assert.assertEquals(expectedPlaylist, actualPlaylist);
+    }
+
+    @Test
+    public void shouldSaveUserToDb(){
+        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedUser");
+        saveExampleUserToDatabase(mongoCollection);
+        assertThat(mongoCollection.count(), Matchers.is(1L));
+    }
+
+    @Test
+    public void shouldReadSavedUserFromDb(){
+        RefinedUser expectedUser = new RefinedUser();
+        try {
+            expectedUser = RefinedUser.builder()
+                    .id("spotify")
+                    .displayName("Spotify")
+                    .externalURL(new URL("https://open.spotify.com/user/spotify"))
+                    .numOfFollowers(7715336)
+                    .href(new URL("https://api.spotify.com/v1/users/spotify"))
+                    .imageURL(new URL("https://profile-images.scdn.co/images/userprofile/default/3c93d52857ecf3e40c4e8435adb7f9c1da40a0dd"))
+                    .uri(new URI("spotify:user:spotify"))
+                    .build();
+        } catch (MalformedURLException | URISyntaxException e) {
+            e.printStackTrace();
+        }
+        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedUsers");
+        saveExampleUserToDatabase(mongoCollection);
+        Object object = mongoDao.retrieveEntryById("spotify", "RefinedUsers");
+        RefinedUser actualUser = toUser((Document) object);
+        Assert.assertEquals(expectedUser, actualUser);
     }
 
 }
