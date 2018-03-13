@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.net.URI;
 import java.net.URL;
 import java.util.List;
@@ -14,14 +13,15 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RefinedPlaylist implements Serializable {
+public class RefinedPlaylist {
     private String id;
-    private URI uri;
     private URL externalURL;
     private Integer numOfFollowers;
-    private String href;
-    private List<String> imageURLs;
+    private URL href;
+    private URL imageURL;
     private String name;
+    private String description;
     private String refinedUserId;
     private List<String> refinedTrackIds;
+    private URI uri;
 }

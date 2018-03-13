@@ -5,21 +5,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.net.URI;
 import java.net.URL;
-import java.util.List;
 
 @Data
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class RefinedUser implements Serializable {
+@NoArgsConstructor
+@Builder
+public class RefinedUser {
     private String id;
-    private URI uri;
     private String displayName;
-    private URL externalUrl;
+    private URL externalURL;
     private Integer numOfFollowers;
-    private String href;
-    private List<String> imageUrls;
+    private URL href;
+    private URL imageURL;
+    private URI uri;
 }
