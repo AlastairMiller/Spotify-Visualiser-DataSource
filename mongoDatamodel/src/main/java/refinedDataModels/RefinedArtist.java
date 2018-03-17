@@ -17,7 +17,6 @@ public class RefinedArtist {
     private String id;
     private URL externalURL;
     private List<String> genres;
-    private List<String> refinedAlbumIds;
     private URL href;
     private String name;
     private int followers;
