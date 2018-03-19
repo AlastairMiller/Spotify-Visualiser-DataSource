@@ -5,11 +5,18 @@
     <parent>
         <artifactId>SpotifyVisualiserDataSource</artifactId>
         <groupId>com.sv</groupId>
-        <version>1.0.0-RELEASE</version>
+        <version>1.0.1-RELEASE</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mongoDatamodel</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+        </dependency>
+    </dependencies>
 
 
 </project>

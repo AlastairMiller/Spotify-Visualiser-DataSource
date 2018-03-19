@@ -10,7 +10,7 @@
     <groupId>com.sv</groupId>
     <artifactId>SpotifyVisualiserDataSource</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1-RELEASE</version>
     <modules>
         <module>mongoDao</module>
         <module>mongoDatamodel</module>
