@@ -123,12 +123,6 @@ public class DaoIntegrationTest {
                     .id("5cIc3SBFuBLVxJz58W2tU9")
                     .externalURL(new URL("https://open.spotify.com/artist/5cIc3SBFuBLVxJz58W2tU9"))
                     .genres(new ArrayList<String>(Arrays.asList("indie poptimism", "indie r&b")))
-                    .refinedAlbumIds(new ArrayList<String>(Arrays.asList(
-                            "0zicd2mBV8HTzSubByj4vP", "562fzRzo7acnqGXGuty2az", "2x7GLQ1X785XAamwhzJUJG", "74mKRJaNS5PWUADvFJS7ji",
-                            "733e1ZfktLSwj96X5rsMeE", "2wGl54RF5pLv212S4bEXtT", "2wqFdb5lFQVGiNP7kUETnC", "1Y5DV3pPPLmpClvFw8Dtcj",
-                            "5GXrievxdXgabSPY9gVq5J", "6EH6qQ516EF4NUEl6FsWit", "6x8tzop53PDl2tvjIXB9a0", "7FJANHeAa8sEWVFio0evWX",
-                            "1lpTHlvDpmR1LDE0ru6Cth", "4LA0h9eDJKoKfwiDWxGlFM", "4wl4BQZQocAFjggJ4nN70H", "0Z3ZIqbi57Xi9bEfL5JWQk",
-                            "6dUOLPzICJ8Ap9hdY28AnA")))
                     .href(new URL("https://api.spotify.com/v1/artists/5cIc3SBFuBLVxJz58W2tU9"))
                     .name("Oh Wonder")
                     .followers(615216)
@@ -272,12 +266,6 @@ public class DaoIntegrationTest {
                     .id("5cIc3SBFuBLVxJz58W2tU9")
                     .externalURL(new URL("https://open.spotify.com/artist/5cIc3SBFuBLVxJz58W2tU9"))
                     .genres(new ArrayList<String>(Arrays.asList("indie poptimism", "indie r&b")))
-                    .refinedAlbumIds(new ArrayList<String>(Arrays.asList(
-                            "0zicd2mBV8HTzSubByj4vP", "562fzRzo7acnqGXGuty2az", "2x7GLQ1X785XAamwhzJUJG", "74mKRJaNS5PWUADvFJS7ji",
-                            "733e1ZfktLSwj96X5rsMeE", "2wGl54RF5pLv212S4bEXtT", "2wqFdb5lFQVGiNP7kUETnC", "1Y5DV3pPPLmpClvFw8Dtcj",
-                            "5GXrievxdXgabSPY9gVq5J", "6EH6qQ516EF4NUEl6FsWit", "6x8tzop53PDl2tvjIXB9a0", "7FJANHeAa8sEWVFio0evWX",
-                            "1lpTHlvDpmR1LDE0ru6Cth", "4LA0h9eDJKoKfwiDWxGlFM", "4wl4BQZQocAFjggJ4nN70H", "0Z3ZIqbi57Xi9bEfL5JWQk",
-                            "6dUOLPzICJ8Ap9hdY28AnA")))
                     .href(new URL("https://api.spotify.com/v1/artists/5cIc3SBFuBLVxJz58W2tU9"))
                     .name("Oh Wonder")
                     .followers(615216)

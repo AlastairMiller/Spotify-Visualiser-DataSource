@@ -4,12 +4,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.bson.Document;
 import refinedDataModels.*;
 
+import java.lang.reflect.Field;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 
 @Slf4j
@@ -40,13 +40,12 @@ public class JsontoRefinedMapper {
             return RefinedArtist.builder()
                     .id(document.getString("id"))
                     .externalURL(new URL(document.getString("externalURL")))
-                    .genres( new ArrayList<>((Collection<? extends String>) document.get("genres")))
-                    .refinedAlbumIds(new ArrayList<>((Collection<? extends String>) document.get("refinedAlbumIds")))
+                    .genres(new ArrayList<>((Collection<? extends String>) document.get("genres")))
                     .href(new URL(document.getString("href")))
-                    .name( document.getString("name"))
+                    .name(document.getString("name"))
                     .followers(document.getInteger("followers"))
-                    .popularity( document.getInteger("popularity"))
-                    .uri( new URI(document.getString("uri")))
+                    .popularity(document.getInteger("popularity"))
+                    .uri(new URI(document.getString("uri")))
                     .build();
         } catch (NullPointerException e) {
             log.error("One or more fields are empty");
@@ -114,16 +113,47 @@ public class JsontoRefinedMapper {
                     .name(document.getString("name"))
                     .description(document.getString("description"))
                     .refinedUserId(document.getString("refinedUserId"))
-                    .refinedTrackIds(new ArrayList<String>((Collection<? extends String>) document.get("refinedTrackIds")))
+                    .refinedTrackIds(new ArrayList<>((Collection<? extends String>) document.get("refinedTrackIds")))
                     .uri(new URI(document.getString("uri")))
                     .build();
         } catch (NullPointerException e) {
             log.error("One or more fields are empty");
-            return null;
+            return buildObjectWithNullField(RefinedPlaylist.class, document);
         } catch (MalformedURLException | URISyntaxException e) {
             log.error("Malformed Playlist URL/URI from database");
-            return null;
+            return buildObjectWithNullField(RefinedPlaylist.class, document);
         }
+    }
+
+    public static <T> T buildObjectWithNullField(Class<T> clazz, Document document) {
+        T object = (T) new Object();
+        document.forEach((k, v) -> {
+            if (v != null) {
+                for (Field field : clazz.getDeclaredFields()) {
+                    if (field.getName().equals(k)) {
+                        setField(object, field.getName(), v);
+                    }
+                }
+            }
+        });
+        return object;
+    }
+
+    private static void setField(Object inputObject, String fieldName, Object fieldValue) {
+        Field field;
+        try {
+            field = inputObject.getClass().getDeclaredField(fieldName);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+            return;
+        }
+        field.setAccessible(true);
+        try {
+            field.set(inputObject, fieldValue);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
