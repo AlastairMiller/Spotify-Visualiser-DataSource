@@ -12,7 +12,7 @@ public class RefinedtoJsonMapper {
                 return nativeValue.toString();
             }
             return nativeValue;
-        } catch (IllegalAccessException | InvocationTargetException e) {
+        } catch (IllegalAccessException | InvocationTargetException | NullPointerException e) {
             e.printStackTrace();
         }
         return null;
