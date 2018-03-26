@@ -29,8 +29,11 @@ public class JsontoRefinedMapper {
                     .href(new URL(document.getString("href")))
                     .uri(new URI(document.getString("uri")))
                     .build();
+        } catch (NullPointerException e) {
+            log.error("One or more fields are empty");
+            return null;
         } catch (MalformedURLException | URISyntaxException e) {
-            e.printStackTrace();
+            log.error("Malformed Album URL/URI from database");
             return null;
         }
     }
@@ -75,10 +78,10 @@ public class JsontoRefinedMapper {
                     .build();
         } catch (NullPointerException e) {
             log.error("One or more fields are empty");
-            return null;
+            return buildObjectWithNullField(RefinedTrack.class, document);
         } catch (MalformedURLException | URISyntaxException e) {
             log.error("Malformed Track URL/URI from database");
-            return null;
+            return buildObjectWithNullField(RefinedTrack.class, document);
         }
     }
 
@@ -126,7 +129,7 @@ public class JsontoRefinedMapper {
     }
 
     public static <T> T buildObjectWithNullField(Class<T> clazz, Document document) {
-        T object = (T) new Object();
+        T object = new Class<? extends T>();
         document.forEach((k, v) -> {
             if (v != null) {
                 for (Field field : clazz.getDeclaredFields()) {
