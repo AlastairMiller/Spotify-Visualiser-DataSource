@@ -1,7 +1,7 @@
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.svd.ClientHandler;
-import com.svd.dao.BaseDao;
+import com.svd.dao.MongoDao;
 import de.flapdoodle.embed.mongo.MongodExecutable;
 import de.flapdoodle.embed.mongo.MongodProcess;
 import de.flapdoodle.embed.mongo.MongodStarter;
@@ -20,8 +20,6 @@ import org.junit.Test;
 import refinedDataModels.*;
 
 import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,7 +35,7 @@ public class DaoIntegrationTest {
 
     private MongodExecutable mongodExe;
     private MongodProcess mongod;
-    private BaseDao mongoDao;
+    private MongoDao mongoDao;
     private String hostname = "127.0.0.1";
     private int port = 12345;
 
@@ -53,7 +51,7 @@ public class DaoIntegrationTest {
         mongodExe = starter.prepare(mongodConfig);
         mongod = mongodExe.start();
         MongoClient mongoClient = new MongoClient(hostname, port);
-        mongoDao = new BaseDao<>(new ClientHandler(hostname, port, DATABASE_NAME));
+        mongoDao = new MongoDao<>(new ClientHandler(hostname, port, DATABASE_NAME));
     }
 
     @After
@@ -83,9 +81,9 @@ public class DaoIntegrationTest {
                     .popularity(61)
                     .externalURL(new URL("https://open.spotify.com/album/6fpZzsdzd04nqiDPWnF2iw"))
                     .href(new URL("https://api.spotify.com/v1/albums/6fpZzsdzd04nqiDPWnF2iw"))
-                    .uri(new URI("spotify:album:6fpZzsdzd04nqiDPWnF2iw"))
+                    .spotifyURI("spotify:album:6fpZzsdzd04nqiDPWnF2iw")
                     .build();
-        } catch (MalformedURLException | URISyntaxException e) {
+        } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         mongoDao.saveEntryToDatabase(RefinedAlbum.class, exampleAlbum, mongoCollection);
@@ -108,7 +106,7 @@ public class DaoIntegrationTest {
                     .previewURL(new URL("https://p.scdn.co/mp3-preview/228a01d80735cc6f137f1a54c5b28122aa03123e?cid=8897482848704f2a8f8d7c79726a70d4"))
                     .trackNumber(8)
                     .popularity(60)
-                    .uri(URI.create("spotify:track:3aTrurxagDJfsQRBEOGfMb"))
+                    .spotifyURI("spotify:track:3aTrurxagDJfsQRBEOGfMb")
                     .build();
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -127,9 +125,9 @@ public class DaoIntegrationTest {
                     .name("Oh Wonder")
                     .followers(615216)
                     .popularity(78)
-                    .uri(new URI("spotify:artist:5cIc3SBFuBLVxJz58W2tU9"))
+                    .spotifyURI("spotify:artist:5cIc3SBFuBLVxJz58W2tU9")
                     .build();
-        } catch (MalformedURLException | URISyntaxException e) {
+        } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         mongoDao.saveEntryToDatabase(RefinedArtist.class, exampleArtist, mongoCollection);
@@ -150,9 +148,9 @@ public class DaoIntegrationTest {
                     .refinedTrackIds(new ArrayList<String>(Arrays.asList(
                             "5V3ZQQtWehePZs2ztZvyAi", "2T5cJy6jrHaciEUExBvxs8", "5dKyZWlgjWw1oJgLa4GCZD",
                             "5owRsFtcu8vxXYHvNyqdRr", "5aAx2yezTd8zXrkmtKl66Z")))
-                    .uri(new URI("spotify:user:millersinc"))
+                    .spotifyURI("spotify:user:millersinc")
                     .build();
-        } catch (MalformedURLException | URISyntaxException e) {
+        } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         mongoDao.saveEntryToDatabase(RefinedPlaylist.class, examplePlaylist, mongoCollection);
@@ -168,9 +166,9 @@ public class DaoIntegrationTest {
                     .numOfFollowers(7715336)
                     .href(new URL("https://api.spotify.com/v1/users/spotify"))
                     .imageURL(new URL("https://profile-images.scdn.co/images/userprofile/default/3c93d52857ecf3e40c4e8435adb7f9c1da40a0dd"))
-                    .uri(new URI("spotify:user:spotify"))
+                    .spotifyURI("spotify:user:spotify")
                     .build();
-        } catch (MalformedURLException | URISyntaxException e) {
+        } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         mongoDao.saveEntryToDatabase(RefinedUser.class, exampleUser, mongoCollection);
@@ -203,9 +201,9 @@ public class DaoIntegrationTest {
                     .popularity(61)
                     .externalURL(new URL("https://open.spotify.com/album/6fpZzsdzd04nqiDPWnF2iw"))
                     .href(new URL("https://api.spotify.com/v1/albums/6fpZzsdzd04nqiDPWnF2iw"))
-                    .uri(new URI("spotify:album:6fpZzsdzd04nqiDPWnF2iw"))
+                    .spotifyURI("spotify:album:6fpZzsdzd04nqiDPWnF2iw")
                     .build();
-        } catch (MalformedURLException | URISyntaxException e) {
+        } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedAlbums");
@@ -239,7 +237,7 @@ public class DaoIntegrationTest {
                     .previewURL(new URL("https://p.scdn.co/mp3-preview/228a01d80735cc6f137f1a54c5b28122aa03123e?cid=8897482848704f2a8f8d7c79726a70d4"))
                     .trackNumber(8)
                     .popularity(60)
-                    .uri(URI.create("spotify:track:3aTrurxagDJfsQRBEOGfMb"))
+                    .spotifyURI("spotify:track:3aTrurxagDJfsQRBEOGfMb")
                     .build();
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -270,9 +268,9 @@ public class DaoIntegrationTest {
                     .name("Oh Wonder")
                     .followers(615216)
                     .popularity(78)
-                    .uri(new URI("spotify:artist:5cIc3SBFuBLVxJz58W2tU9"))
+                    .spotifyURI("spotify:artist:5cIc3SBFuBLVxJz58W2tU9")
                     .build();
-        } catch (MalformedURLException | URISyntaxException e) {
+        } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedArtists");
@@ -306,9 +304,9 @@ public class DaoIntegrationTest {
                     .refinedTrackIds(new ArrayList<String>(Arrays.asList(
                             "5V3ZQQtWehePZs2ztZvyAi", "2T5cJy6jrHaciEUExBvxs8", "5dKyZWlgjWw1oJgLa4GCZD",
                             "5owRsFtcu8vxXYHvNyqdRr", "5aAx2yezTd8zXrkmtKl66Z")))
-                    .uri(new URI("spotify:user:millersinc"))
+                    .spotifyURI("spotify:user:millersinc")
                     .build();
-        } catch (MalformedURLException | URISyntaxException e) {
+        } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedPlaylists");
@@ -336,9 +334,9 @@ public class DaoIntegrationTest {
                     .numOfFollowers(7715336)
                     .href(new URL("https://api.spotify.com/v1/users/spotify"))
                     .imageURL(new URL("https://profile-images.scdn.co/images/userprofile/default/3c93d52857ecf3e40c4e8435adb7f9c1da40a0dd"))
-                    .uri(new URI("spotify:user:spotify"))
+                    .spotifyURI("spotify:user:spotify")
                     .build();
-        } catch (MalformedURLException | URISyntaxException e) {
+        } catch (MalformedURLException e) {
             e.printStackTrace();
         }
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedUsers");

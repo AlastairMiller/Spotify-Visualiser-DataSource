@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.net.URI;
 import java.net.URL;
 
 @Data
@@ -19,5 +18,5 @@ public class RefinedUser {
     private Integer numOfFollowers;
     private URL href;
     private URL imageURL;
-    private URI uri;
+    private String spotifyURI;
 }

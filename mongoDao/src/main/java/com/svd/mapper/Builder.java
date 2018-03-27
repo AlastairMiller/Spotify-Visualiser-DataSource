@@ -4,6 +4,9 @@ import com.google.common.testing.ArbitraryInstances;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,29 +25,29 @@ public class Builder<T> {
         return new Builder<>(clazz);
     }
 
-    public Builder<T> with(String name, Object value) {
-        map.put(name, value);
+    public Builder<T> with(Map<String, Object> map) {
+        this.map.putAll(map);
         return this;
     }
 
-    private Builder<T> setProperty(T instance, String name, Object value) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+    private Builder<T> setProperty(T instance, String name, Object value) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, MalformedURLException {
         try {
             if (value != null) {
                 invoke(instance, name, value, value.getClass());
             } else {
-                findMethodAndInvoke(instance, name, value);
+                findMethodAndInvoke(instance, name, null);
             }
         } catch (NoSuchMethodException e) {
             if (value.getClass() == java.lang.Integer.class) {
                 invoke(instance, name, value, int.class);
-            } else if (value.getClass() == java.lang.Long.class) {
-                invoke(instance, name, value, long.class);
-            } else if (value.getClass() == java.lang.Float.class) {
-                invoke(instance, name, value, float.class);
-            } else if (value.getClass() == java.lang.Double.class) {
-                invoke(instance, name, value, double.class);
             } else if (value.getClass() == java.lang.Boolean.class) {
                 invoke(instance, name, value, boolean.class);
+            } else if (value.getClass() == java.lang.String.class) {
+                if (value.toString().contains("http")) {
+                    invoke(instance, name, new URL(value.toString()), URL.class);
+                } else if (name.equals("uri")) {
+                    invoke(instance, name, URI.create(value.toString()), URI.class);
+                }
             } else {
                 findMethodAndInvoke(instance, name, value);
             }
