@@ -17,11 +17,11 @@ import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
 
 @Slf4j
 @Data
-public class BaseDao<T> {
+public class MongoDao<T> {
 
     private final ClientHandler clientHandler;
 
-    public BaseDao(ClientHandler clientHandler) {
+    public MongoDao(ClientHandler clientHandler) {
         this.clientHandler = clientHandler;
     }
 
