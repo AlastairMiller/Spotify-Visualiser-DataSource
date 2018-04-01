@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.net.URI;
 import java.net.URL;
 import java.util.List;
 
@@ -14,8 +15,8 @@ import java.util.List;
 @Builder
 public class RefinedTrack {
     private String id;
-    private List<String> refinedAlbumIds;
-    private List<String> refinedArtistIds;
+    private String albumId;
+    private List<String> artistIds;
     private int discNum;
     private int durationMs;
     private boolean explicit;

@@ -95,8 +95,8 @@ public class DaoIntegrationTest {
         try {
             exampleTrack = RefinedTrack.builder()
                     .id("3aTrurxagDJfsQRBEOGfMb")
-                    .refinedAlbumIds(Collections.singletonList("24BRvmlDhVhjTJsqazdVxm"))
-                    .refinedArtistIds(Collections.singletonList("4yvcSjfu4PC0CYQyLy4wSq"))
+                    .albumId("24BRvmlDhVhjTJsqazdVxm")
+                    .artistIds(Collections.singletonList("4yvcSjfu4PC0CYQyLy4wSq"))
                     .discNum(1)
                     .durationMs(320654)
                     .explicit(true)
@@ -144,8 +144,8 @@ public class DaoIntegrationTest {
                     .imageURL(new URL("https://pl.scdn.co/images/pl/default/27eee5eb5ba85317586d3af6709bcebfc8525d83"))
                     .name("SPS Test playlist")
                     .description("&lt;Test&gt;")
-                    .refinedUserId("millersinc")
-                    .refinedTrackIds(new ArrayList<String>(Arrays.asList(
+                    .userId("millersinc")
+                    .trackIds(new ArrayList<String>(Arrays.asList(
                             "5V3ZQQtWehePZs2ztZvyAi", "2T5cJy6jrHaciEUExBvxs8", "5dKyZWlgjWw1oJgLa4GCZD",
                             "5owRsFtcu8vxXYHvNyqdRr", "5aAx2yezTd8zXrkmtKl66Z")))
                     .spotifyURI("spotify:user:millersinc")
@@ -226,8 +226,8 @@ public class DaoIntegrationTest {
         try {
             expectedSong = RefinedTrack.builder()
                     .id("3aTrurxagDJfsQRBEOGfMb")
-                    .refinedAlbumIds(Collections.singletonList("24BRvmlDhVhjTJsqazdVxm"))
-                    .refinedArtistIds(Collections.singletonList("4yvcSjfu4PC0CYQyLy4wSq"))
+                    .albumId("24BRvmlDhVhjTJsqazdVxm")
+                    .artistIds(Collections.singletonList("4yvcSjfu4PC0CYQyLy4wSq"))
                     .discNum(1)
                     .durationMs(320654)
                     .explicit(true)
@@ -300,8 +300,8 @@ public class DaoIntegrationTest {
                     .imageURL(new URL("https://pl.scdn.co/images/pl/default/27eee5eb5ba85317586d3af6709bcebfc8525d83"))
                     .name("SPS Test playlist")
                     .description("&lt;Test&gt;")
-                    .refinedUserId("millersinc")
-                    .refinedTrackIds(new ArrayList<String>(Arrays.asList(
+                    .userId("millersinc")
+                    .trackIds(new ArrayList<String>(Arrays.asList(
                             "5V3ZQQtWehePZs2ztZvyAi", "2T5cJy6jrHaciEUExBvxs8", "5dKyZWlgjWw1oJgLa4GCZD",
                             "5owRsFtcu8vxXYHvNyqdRr", "5aAx2yezTd8zXrkmtKl66Z")))
                     .spotifyURI("spotify:user:millersinc")

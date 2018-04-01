@@ -20,7 +20,7 @@ public class RefinedPlaylist {
     private URL imageURL;
     private String name;
     private String description;
-    private String refinedUserId;
-    private List<String> refinedTrackIds;
+    private String userId;
+    private List<String> trackIds;
     private String spotifyURI;
 }
