@@ -10,27 +10,26 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Builder<T> {
+public class RefinedObjectBuilder<T> {
 
     private final Class<?> clazz;
     private Map<String, Object> map;
 
-    public Builder(Class<T> clazz) {
-        super();
+    public RefinedObjectBuilder(Class<T> clazz) {
         this.clazz = clazz;
         this.map = new HashMap<>();
     }
 
-    public static Builder<?> start(Class<?> clazz) {
-        return new Builder<>(clazz);
+    public static RefinedObjectBuilder<?> start(Class<?> clazz) {
+        return new RefinedObjectBuilder<>(clazz);
     }
 
-    public Builder<T> with(Map<String, Object> map) {
+    public RefinedObjectBuilder<T> with(Map<String, Object> map) {
         this.map.putAll(map);
         return this;
     }
 
-    private Builder<T> setProperty(T instance, String name, Object value) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, MalformedURLException {
+    private RefinedObjectBuilder<T> setProperty(T instance, String name, Object value) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, MalformedURLException {
         try {
             if (value != null) {
                 invoke(instance, name, value, value.getClass());
@@ -38,11 +37,11 @@ public class Builder<T> {
                 findMethodAndInvoke(instance, name, null);
             }
         } catch (NoSuchMethodException e) {
-            if (value.getClass() == java.lang.Integer.class) {
+            if (value.getClass() == Integer.class) {
                 invoke(instance, name, value, int.class);
-            } else if (value.getClass() == java.lang.Boolean.class) {
-                invoke(instance, name, value, boolean.class);
-            } else if (value.getClass() == java.lang.String.class) {
+            } else if (value.getClass() == Boolean.class) {
+                invoke(instance, name, value, Boolean.class);
+            } else if (value.getClass() == String.class) {
                 if (value.toString().contains("http")) {
                     invoke(instance, name, new URL(value.toString()), URL.class);
                 } else if (name.equals("uri")) {
@@ -55,19 +54,17 @@ public class Builder<T> {
         return this;
     }
 
-    private void findMethodAndInvoke(T instance, String name, Object value) throws InvocationTargetException, IllegalAccessException {
+    private Object findMethodAndInvoke(T instance, String name, Object value) throws InvocationTargetException, IllegalAccessException {
         Method[] methods = clazz.getMethods();
         String setterName = getSetterName(name);
-        boolean invoked = false;
         for (Method method : methods) {
             if (method.getName().equals(setterName)) {
-                method.invoke(instance, value);
-                invoked = true;
+                return method.invoke(instance, value);
+
             }
         }
-        if (!invoked) {
-            throw new NoSuchMethodError("Cannot find method with name " + setterName);
-        }
+
+        throw new NoSuchMethodError("Cannot find method with name " + setterName);
     }
 
     private String getSetterName(String name) {

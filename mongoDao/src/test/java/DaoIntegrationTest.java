@@ -62,81 +62,66 @@ public class DaoIntegrationTest {
         }
     }
 
-    private void saveExampleAlbumToDatabase(MongoCollection<Document> mongoCollection) {
-        RefinedAlbum exampleAlbum = new RefinedAlbum();
-        try {
-            exampleAlbum = RefinedAlbum.builder()
-                    .id("6fpZzsdzd04nqiDPWnF2iw")
-                    .name("All I Need (Deluxe Version)")
-                    .artistsIds(Collections.singletonList("7qRll6DYV06u2VuRPAVqug"))
-                    .trackIds(new ArrayList<String>(Arrays.asList(
-                            "4GKmx23LpQNXkamXDoZyFE", "08pOoVfZ8BsLCfXxRsci2Y", "72nV5T9HAbKc1sLka9NF6x",
-                            "69Q9unT80s08dUolhcgr4T", "5bLgPkbqC97jVe6rJlpzLJ", "7b63AiSD37IYRJBrEQcfdR",
-                            "6iudA5joUv7hmPQYFIVEB5", "2SjYwtyKUTQQ8WoxX8uX9w", "1621HusJy3pKPrynU8nmB3",
-                            "3eDIItHQg5S69tfVR12RYh", "5gLCxvVic5y7PBLDzBsgmd", "63jqw4EEcCxUIqJm4514ZB",
-                            "2umo57mtmQOEoCza8OncR0", "1puaMbxVMGdZnPTk1rq19X", "1puaMbxVMGdZnPTk1rq19X",
-                            "27oi5r6fj4aPcV86Z40Wrm")))
-                    .imageURL(new URL("https://i.scdn.co/image/fb49d9c64b1e8b2af45498ad23603a749cd1b177"))
-                    .releaseDate(new Date(1454630400000L))
-                    .popularity(61)
-                    .externalURL(new URL("https://open.spotify.com/album/6fpZzsdzd04nqiDPWnF2iw"))
-                    .href(new URL("https://api.spotify.com/v1/albums/6fpZzsdzd04nqiDPWnF2iw"))
-                    .spotifyURI("spotify:album:6fpZzsdzd04nqiDPWnF2iw")
-                    .build();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        mongoDao.saveEntryToDatabase(RefinedAlbum.class, exampleAlbum, mongoCollection);
+    private void saveExampleAlbumToDatabase(MongoCollection<Document> mongoCollection) throws MalformedURLException {
+        RefinedAlbum exampleAlbum = RefinedAlbum.builder()
+                .id("6fpZzsdzd04nqiDPWnF2iw")
+                .name("All I Need (Deluxe Version)")
+                .artistsIds(Collections.singletonList("7qRll6DYV06u2VuRPAVqug"))
+                .trackIds(new ArrayList<String>(Arrays.asList(
+                        "4GKmx23LpQNXkamXDoZyFE", "08pOoVfZ8BsLCfXxRsci2Y", "72nV5T9HAbKc1sLka9NF6x",
+                        "69Q9unT80s08dUolhcgr4T", "5bLgPkbqC97jVe6rJlpzLJ", "7b63AiSD37IYRJBrEQcfdR",
+                        "6iudA5joUv7hmPQYFIVEB5", "2SjYwtyKUTQQ8WoxX8uX9w", "1621HusJy3pKPrynU8nmB3",
+                        "3eDIItHQg5S69tfVR12RYh", "5gLCxvVic5y7PBLDzBsgmd", "63jqw4EEcCxUIqJm4514ZB",
+                        "2umo57mtmQOEoCza8OncR0", "1puaMbxVMGdZnPTk1rq19X", "1puaMbxVMGdZnPTk1rq19X",
+                        "27oi5r6fj4aPcV86Z40Wrm")))
+                .imageURL(new URL("https://i.scdn.co/image/fb49d9c64b1e8b2af45498ad23603a749cd1b177"))
+                .releaseDate(new Date(1454630400000L))
+                .popularity(61)
+                .externalURL(new URL("https://open.spotify.com/album/6fpZzsdzd04nqiDPWnF2iw"))
+                .href(new URL("https://api.spotify.com/v1/albums/6fpZzsdzd04nqiDPWnF2iw"))
+                .spotifyURI("spotify:album:6fpZzsdzd04nqiDPWnF2iw")
+                .build();
 
+        mongoDao.saveEntryToDatabase(RefinedAlbum.class, exampleAlbum, mongoCollection);
     }
 
-    private void saveExampleTrackToDatabase(MongoCollection<Document> mongoCollection) {
-        RefinedTrack exampleTrack = new RefinedTrack();
-        try {
-            exampleTrack = RefinedTrack.builder()
-                    .id("3aTrurxagDJfsQRBEOGfMb")
-                    .albumId("24BRvmlDhVhjTJsqazdVxm")
-                    .artistIds(Collections.singletonList("4yvcSjfu4PC0CYQyLy4wSq"))
-                    .discNum(1)
-                    .durationMs(320654)
-                    .explicit(true)
-                    .externalURL(new URL("https://open.spotify.com/track/3aTrurxagDJfsQRBEOGfMb"))
-                    .href(new URL("https://api.spotify.com/v1/tracks/3aTrurxagDJfsQRBEOGfMb"))
-                    .name("The Other Side Of Paradise")
-                    .previewURL(new URL("https://p.scdn.co/mp3-preview/228a01d80735cc6f137f1a54c5b28122aa03123e?cid=8897482848704f2a8f8d7c79726a70d4"))
-                    .trackNumber(8)
-                    .popularity(60)
-                    .spotifyURI("spotify:track:3aTrurxagDJfsQRBEOGfMb")
-                    .build();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+    private void saveExampleTrackToDatabase(MongoCollection<Document> mongoCollection) throws MalformedURLException {
+        RefinedTrack exampleTrack = RefinedTrack.builder()
+                .id("3aTrurxagDJfsQRBEOGfMb")
+                .albumId("24BRvmlDhVhjTJsqazdVxm")
+                .artistIds(Collections.singletonList("4yvcSjfu4PC0CYQyLy4wSq"))
+                .discNum(1)
+                .durationMs(320654)
+                .explicit(true)
+                .externalURL(new URL("https://open.spotify.com/track/3aTrurxagDJfsQRBEOGfMb"))
+                .href(new URL("https://api.spotify.com/v1/tracks/3aTrurxagDJfsQRBEOGfMb"))
+                .name("The Other Side Of Paradise")
+                .previewURL(new URL("https://p.scdn.co/mp3-preview/228a01d80735cc6f137f1a54c5b28122aa03123e?cid=8897482848704f2a8f8d7c79726a70d4"))
+                .trackNumber(8)
+                .popularity(60)
+                .spotifyURI("spotify:track:3aTrurxagDJfsQRBEOGfMb")
+                .build();
+
         mongoDao.saveEntryToDatabase(RefinedTrack.class, exampleTrack, mongoCollection);
     }
 
-    private void saveExampleArtistToDatabase(MongoCollection<Document> mongoCollection) {
-        RefinedArtist exampleArtist = new RefinedArtist();
-        try {
-            exampleArtist = RefinedArtist.builder()
+    private void saveExampleArtistToDatabase(MongoCollection<Document> mongoCollection) throws MalformedURLException {
+        RefinedArtist exampleArtist = RefinedArtist.builder()
                     .id("5cIc3SBFuBLVxJz58W2tU9")
                     .externalURL(new URL("https://open.spotify.com/artist/5cIc3SBFuBLVxJz58W2tU9"))
-                    .genres(new ArrayList<String>(Arrays.asList("indie poptimism", "indie r&b")))
+                    .genres(new ArrayList<>(Arrays.asList("indie poptimism", "indie r&b")))
                     .href(new URL("https://api.spotify.com/v1/artists/5cIc3SBFuBLVxJz58W2tU9"))
                     .name("Oh Wonder")
                     .followers(615216)
                     .popularity(78)
                     .spotifyURI("spotify:artist:5cIc3SBFuBLVxJz58W2tU9")
                     .build();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+
         mongoDao.saveEntryToDatabase(RefinedArtist.class, exampleArtist, mongoCollection);
     }
 
-    private void saveExamplePlaylistToDatabase(MongoCollection<Document> mongoCollection) {
-        RefinedPlaylist examplePlaylist = new RefinedPlaylist();
-        try {
-            examplePlaylist = RefinedPlaylist.builder()
+    private void saveExamplePlaylistToDatabase(MongoCollection<Document> mongoCollection) throws MalformedURLException {
+        RefinedPlaylist examplePlaylist = RefinedPlaylist.builder()
                     .id("2CTdEa3JWbncC1h8WjnuxZ")
                     .externalURL(new URL("https://open.spotify.com/user/millersinc"))
                     .numOfFollowers(0)
@@ -150,16 +135,12 @@ public class DaoIntegrationTest {
                             "5owRsFtcu8vxXYHvNyqdRr", "5aAx2yezTd8zXrkmtKl66Z")))
                     .spotifyURI("spotify:user:millersinc")
                     .build();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+
         mongoDao.saveEntryToDatabase(RefinedPlaylist.class, examplePlaylist, mongoCollection);
     }
 
-    private void saveExampleUserToDatabase(MongoCollection<Document> mongoCollection) {
-        RefinedUser exampleUser = new RefinedUser();
-        try {
-            exampleUser = RefinedUser.builder()
+    private void saveExampleUserToDatabase(MongoCollection<Document> mongoCollection) throws MalformedURLException {
+        RefinedUser exampleUser = RefinedUser.builder()
                     .id("spotify")
                     .displayName("Spotify")
                     .externalURL(new URL("https://open.spotify.com/user/spotify"))
@@ -168,24 +149,20 @@ public class DaoIntegrationTest {
                     .imageURL(new URL("https://profile-images.scdn.co/images/userprofile/default/3c93d52857ecf3e40c4e8435adb7f9c1da40a0dd"))
                     .spotifyURI("spotify:user:spotify")
                     .build();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+
         mongoDao.saveEntryToDatabase(RefinedUser.class, exampleUser, mongoCollection);
     }
 
     @Test
-    public void shouldSaveAlbumToDb() {
+    public void shouldSaveAlbumToDb() throws MalformedURLException {
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedAlbums");
         saveExampleAlbumToDatabase(mongoCollection);
         assertThat(mongoCollection.count(), Matchers.is(1L));
     }
 
     @Test
-    public void shouldReadSavedAlbumFromDb() {
-        RefinedAlbum expectedAlbum = new RefinedAlbum();
-        try {
-            expectedAlbum = RefinedAlbum.builder()
+    public void shouldReadSavedAlbumFromDb() throws MalformedURLException {
+        RefinedAlbum expectedAlbum = RefinedAlbum.builder()
                     .id("6fpZzsdzd04nqiDPWnF2iw")
                     .name("All I Need (Deluxe Version)")
                     .artistsIds(Collections.singletonList("7qRll6DYV06u2VuRPAVqug"))
@@ -203,9 +180,7 @@ public class DaoIntegrationTest {
                     .href(new URL("https://api.spotify.com/v1/albums/6fpZzsdzd04nqiDPWnF2iw"))
                     .spotifyURI("spotify:album:6fpZzsdzd04nqiDPWnF2iw")
                     .build();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedAlbums");
         saveExampleAlbumToDatabase(mongoCollection);
         Object object = mongoDao.retrieveEntryById("6fpZzsdzd04nqiDPWnF2iw", "RefinedAlbums");
@@ -214,17 +189,15 @@ public class DaoIntegrationTest {
     }
 
     @Test
-    public void shouldSaveTrackToDb() {
+    public void shouldSaveTrackToDb() throws MalformedURLException {
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedTracks");
         saveExampleTrackToDatabase(mongoCollection);
         assertThat(mongoCollection.count(), Matchers.is(1L));
     }
 
     @Test
-    public void shouldReadSavedTrackFromDb() {
-        RefinedTrack expectedSong = new RefinedTrack();
-        try {
-            expectedSong = RefinedTrack.builder()
+    public void shouldReadSavedTrackFromDb() throws MalformedURLException {
+        RefinedTrack expectedSong = RefinedTrack.builder()
                     .id("3aTrurxagDJfsQRBEOGfMb")
                     .albumId("24BRvmlDhVhjTJsqazdVxm")
                     .artistIds(Collections.singletonList("4yvcSjfu4PC0CYQyLy4wSq"))
@@ -239,9 +212,7 @@ public class DaoIntegrationTest {
                     .popularity(60)
                     .spotifyURI("spotify:track:3aTrurxagDJfsQRBEOGfMb")
                     .build();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedTracks");
         saveExampleTrackToDatabase(mongoCollection);
         Object object = mongoDao.retrieveEntryById("3aTrurxagDJfsQRBEOGfMb", "RefinedTracks");
@@ -250,29 +221,25 @@ public class DaoIntegrationTest {
     }
 
     @Test
-    public void shouldSaveArtistToDb() {
+    public void shouldSaveArtistToDb() throws MalformedURLException {
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedArtists");
         saveExampleArtistToDatabase(mongoCollection);
         assertThat(mongoCollection.count(), Matchers.is(1L));
     }
 
     @Test
-    public void shouldReadSavedArtistFromDb() {
-        RefinedArtist expectedArtist = new RefinedArtist();
-        try {
-            expectedArtist = RefinedArtist.builder()
+    public void shouldReadSavedArtistFromDb() throws MalformedURLException {
+        RefinedArtist expectedArtist = RefinedArtist.builder()
                     .id("5cIc3SBFuBLVxJz58W2tU9")
                     .externalURL(new URL("https://open.spotify.com/artist/5cIc3SBFuBLVxJz58W2tU9"))
-                    .genres(new ArrayList<String>(Arrays.asList("indie poptimism", "indie r&b")))
+                    .genres(new ArrayList<>(Arrays.asList("indie poptimism", "indie r&b")))
                     .href(new URL("https://api.spotify.com/v1/artists/5cIc3SBFuBLVxJz58W2tU9"))
                     .name("Oh Wonder")
                     .followers(615216)
                     .popularity(78)
                     .spotifyURI("spotify:artist:5cIc3SBFuBLVxJz58W2tU9")
                     .build();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedArtists");
         saveExampleArtistToDatabase(mongoCollection);
         Object object = mongoDao.retrieveEntryById("5cIc3SBFuBLVxJz58W2tU9", "RefinedArtists");
@@ -282,17 +249,15 @@ public class DaoIntegrationTest {
     }
 
     @Test
-    public void shouldSavePlaylistToDb() {
+    public void shouldSavePlaylistToDb() throws MalformedURLException {
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedPlaylists");
         saveExamplePlaylistToDatabase(mongoCollection);
         assertThat(mongoCollection.count(), Matchers.is(1L));
     }
 
     @Test
-    public void shouldReadSavedPlaylistFromDb() {
-        RefinedPlaylist expectedPlaylist = new RefinedPlaylist();
-        try {
-            expectedPlaylist = RefinedPlaylist.builder()
+    public void shouldReadSavedPlaylistFromDb() throws MalformedURLException {
+        RefinedPlaylist expectedPlaylist = RefinedPlaylist.builder()
                     .id("2CTdEa3JWbncC1h8WjnuxZ")
                     .externalURL(new URL("https://open.spotify.com/user/millersinc"))
                     .numOfFollowers(0)
@@ -306,9 +271,7 @@ public class DaoIntegrationTest {
                             "5owRsFtcu8vxXYHvNyqdRr", "5aAx2yezTd8zXrkmtKl66Z")))
                     .spotifyURI("spotify:user:millersinc")
                     .build();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedPlaylists");
         saveExamplePlaylistToDatabase(mongoCollection);
         Object object = mongoDao.retrieveEntryById("2CTdEa3JWbncC1h8WjnuxZ", "RefinedPlaylists");
@@ -317,28 +280,24 @@ public class DaoIntegrationTest {
     }
 
     @Test
-    public void shouldSaveUserToDb() {
+    public void shouldSaveUserToDb() throws MalformedURLException {
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedUser");
         saveExampleUserToDatabase(mongoCollection);
         assertThat(mongoCollection.count(), Matchers.is(1L));
     }
 
     @Test
-    public void shouldReadSavedUserFromDb() {
-        RefinedUser expectedUser = new RefinedUser();
-        try {
-            expectedUser = RefinedUser.builder()
-                    .id("spotify")
-                    .displayName("Spotify")
-                    .externalURL(new URL("https://open.spotify.com/user/spotify"))
-                    .numOfFollowers(7715336)
-                    .href(new URL("https://api.spotify.com/v1/users/spotify"))
-                    .imageURL(new URL("https://profile-images.scdn.co/images/userprofile/default/3c93d52857ecf3e40c4e8435adb7f9c1da40a0dd"))
-                    .spotifyURI("spotify:user:spotify")
-                    .build();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+    public void shouldReadSavedUserFromDb() throws MalformedURLException {
+        RefinedUser expectedUser = RefinedUser.builder()
+                .id("spotify")
+                .displayName("Spotify")
+                .externalURL(new URL("https://open.spotify.com/user/spotify"))
+                .numOfFollowers(7715336)
+                .href(new URL("https://api.spotify.com/v1/users/spotify"))
+                .imageURL(new URL("https://profile-images.scdn.co/images/userprofile/default/3c93d52857ecf3e40c4e8435adb7f9c1da40a0dd"))
+                .spotifyURI("spotify:user:spotify")
+                .build();
+
         MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedUsers");
         saveExampleUserToDatabase(mongoCollection);
         Object object = mongoDao.retrieveEntryById("spotify", "RefinedUsers");

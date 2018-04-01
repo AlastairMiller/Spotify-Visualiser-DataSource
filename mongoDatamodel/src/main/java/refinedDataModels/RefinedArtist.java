@@ -18,7 +18,7 @@ public class RefinedArtist {
     private List<String> genres;
     private URL href;
     private String name;
-    private int followers;
-    private int popularity;
+    private Integer followers;
+    private Integer popularity;
     private String spotifyURI;
 }

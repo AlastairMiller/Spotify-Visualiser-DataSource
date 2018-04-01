@@ -17,14 +17,14 @@ public class RefinedTrack {
     private String id;
     private String albumId;
     private List<String> artistIds;
-    private int discNum;
-    private int durationMs;
-    private boolean explicit;
+    private Integer discNum;
+    private Integer durationMs;
+    private Boolean explicit;
     private URL externalURL;
     private URL href;
     private String name;
     private URL previewURL;
-    private int trackNumber;
-    private int popularity;
+    private Integer trackNumber;
+    private Integer popularity;
     private String spotifyURI;
 }

@@ -20,7 +20,7 @@ public class RefinedAlbum {
     private List<String> trackIds;
     private URL imageURL;
     private Date releaseDate;
-    private int popularity;
+    private Integer popularity;
     private URL externalURL;
     private URL href;
     private String spotifyURI;
