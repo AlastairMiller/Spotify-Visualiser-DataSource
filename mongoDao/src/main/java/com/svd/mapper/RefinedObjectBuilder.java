@@ -37,11 +37,7 @@ public class RefinedObjectBuilder<T> {
                 findMethodAndInvoke(instance, name, null);
             }
         } catch (NoSuchMethodException e) {
-            if (value.getClass() == Integer.class) {
-                invoke(instance, name, value, int.class);
-            } else if (value.getClass() == Boolean.class) {
-                invoke(instance, name, value, Boolean.class);
-            } else if (value.getClass() == String.class) {
+            if (value.getClass() == String.class) {
                 if (value.toString().contains("http")) {
                     invoke(instance, name, new URL(value.toString()), URL.class);
                 } else if (name.equals("uri")) {
