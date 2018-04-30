@@ -1,12 +1,9 @@
 package com.svd.dao;
 
 import com.mongodb.client.MongoCollection;
-import com.svd.ClientHandler;
 import org.bson.Document;
 
 public interface MongoDao {
-
-    ClientHandler clientHandler = null;
 
     MongoCollection<Document> getCollection(String collectionName);
 
