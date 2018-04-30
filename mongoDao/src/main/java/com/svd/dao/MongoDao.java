@@ -1,76 +1,24 @@
 package com.svd.dao;
 
-import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.svd.ClientHandler;
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 import org.bson.Document;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.List;
+public interface MongoDao {
 
-import static com.mongodb.client.model.Filters.eq;
-import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
+    ClientHandler clientHandler = null;
 
-@Slf4j
-@Data
-public class MongoDao<T> {
+    MongoCollection<Document> getCollection(String collectionName);
 
-    private final ClientHandler clientHandler;
-
-    public MongoDao(ClientHandler clientHandler) {
-        this.clientHandler = clientHandler;
-    }
-
-    public MongoCollection<Document> getCollection(String collectionName) {
-
-        return clientHandler.getMongoDB().getCollection(collectionName);
-    }
-
-    public void saveEntryToDatabase(Class<T> inputClass, Object inputObject, MongoCollection<Document> collection) {
-        List<Field> fields = Arrays.asList(inputClass.getDeclaredFields());
-        Document doc = new Document();
-        for (Field field : fields) {
-            field.setAccessible(true);
-            try {
-                Method getter;
-                if (field.getType().getName().equals("boolean")) {
-                    getter = inputClass.getDeclaredMethod("is" + field.getName().substring(0, 1).toUpperCase() + field.getName().substring(1));
-                } else {
-                    getter = inputClass.getDeclaredMethod("get" + field.getName().substring(0, 1).toUpperCase() + field.getName().substring(1));
-                }
-                doc.append(field.getName(), invokeSimpleGetter(getter, inputObject));
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-            }
-        }
-        collection.insertOne(doc);
-    }
+    void saveEntryToDatabase(Class inputClass, Object inputObject, MongoCollection<Document> collection);
 
 
-    public void updateEntryInDatabase(Class<T> inputObject, MongoCollection<Document> collection) throws IllegalAccessException {
-        List<Field> fields = Arrays.asList(inputObject.getDeclaredFields());
-        Document doc = new Document();
-        for (Field field : fields) {
-            field.setAccessible(true);
-            doc.append(field.getName(), field.get(inputObject).toString());
-        }
-        collection.updateOne(eq("id", doc.get("id")), doc);
-    }
+    void updateEntryInDatabase(Class inputObject, MongoCollection<Document> collection) throws IllegalAccessException;
 
 
-    public Document retrieveEntryById(String itemId, String collectionName) {
-        BasicDBObject searchQuery = new BasicDBObject();
-        searchQuery.put("id", itemId);
-        return getCollection(collectionName).find(searchQuery).first();
-    }
+    Document retrieveEntryById(String itemId, String collectionName);
 
-    public void deleteEntryinDb(String itemId, MongoCollection<Document> collection) {
-        collection.deleteOne(eq("id", itemId));
-    }
+    void deleteEntryinDb(String itemId, MongoCollection<Document> collection);
 
 
 }
