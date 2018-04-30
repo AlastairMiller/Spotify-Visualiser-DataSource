@@ -17,7 +17,7 @@ public class RefinedTrack {
     private String id;
     private String albumId;
     private List<String> artistIds;
-    private Integer discNum;
+    private Integer discNumber;
     private Integer durationMs;
     private Boolean explicit;
     private URL externalURL;
