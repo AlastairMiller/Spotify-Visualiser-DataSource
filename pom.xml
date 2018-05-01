@@ -15,6 +15,9 @@
         <module>mongoDao</module>
         <module>mongoDatamodel</module>
     </modules>
+    <scm>
+        <developerConnection>scm:git:https://github.com/AlastairMiller/Spotify-Visualiser-DataSource.git</developerConnection>
+    </scm>
     <build>
         <plugins>
             <plugin>
