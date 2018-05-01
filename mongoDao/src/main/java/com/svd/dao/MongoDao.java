@@ -12,6 +12,7 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.mongodb.client.model.Filters.bitsAllClear;
 import static com.mongodb.client.model.Filters.eq;
 import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
 
@@ -20,27 +21,28 @@ import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
 public class MongoDao<T> {
 
     private final ClientHandler clientHandler;
+    private final String collectionName;
+    private final Class<T> daoClazz;
+    private MongoCollection<Document> mongoCollection;
 
-    public MongoDao(ClientHandler clientHandler) {
+    public MongoDao(ClientHandler clientHandler, String collectionName, Class<T> clazz) {
         this.clientHandler = clientHandler;
+        this.collectionName = collectionName;
+        this.mongoCollection = clientHandler.getMongoDB().getCollection(collectionName);
+        this.daoClazz = clazz;
     }
 
-    public MongoCollection<Document> getCollection(String collectionName) {
-
-        return clientHandler.getMongoDB().getCollection(collectionName);
-    }
-
-    public void saveEntryToDatabase(Class<T> inputClass, Object inputObject, MongoCollection<Document> collection) {
-        List<Field> fields = Arrays.asList(inputClass.getDeclaredFields());
+    public void saveEntryToDatabase(T inputObject, MongoCollection<Document> collection) {
+        Field[] fields = daoClazz.getDeclaredFields();
         Document doc = new Document();
         for (Field field : fields) {
             field.setAccessible(true);
             try {
                 Method getter;
                 if (field.getType().getName().equals("boolean")) {
-                    getter = inputClass.getDeclaredMethod("is" + field.getName().substring(0, 1).toUpperCase() + field.getName().substring(1));
+                    getter = daoClazz.getDeclaredMethod("is" + field.getName().substring(0, 1).toUpperCase() + field.getName().substring(1));
                 } else {
-                    getter = inputClass.getDeclaredMethod("get" + field.getName().substring(0, 1).toUpperCase() + field.getName().substring(1));
+                    getter = daoClazz.getDeclaredMethod("get" + field.getName().substring(0, 1).toUpperCase() + field.getName().substring(1));
                 }
                 doc.append(field.getName(), invokeSimpleGetter(getter, inputObject));
             } catch (NoSuchMethodException e) {
@@ -51,21 +53,21 @@ public class MongoDao<T> {
     }
 
 
-    public void updateEntryInDatabase(Class<T> inputObject, MongoCollection<Document> collection) throws IllegalAccessException {
-        List<Field> fields = Arrays.asList(inputObject.getDeclaredFields());
+    public void updateEntryInDatabase(T newObject) throws IllegalAccessException {
+        Field[] fields = daoClazz.getDeclaredFields();
         Document doc = new Document();
         for (Field field : fields) {
             field.setAccessible(true);
-            doc.append(field.getName(), field.get(inputObject).toString());
+            doc.append(field.getName(), field.get(daoClazz).toString());
         }
-        collection.updateOne(eq("id", doc.get("id")), doc);
+        mongoCollection.updateOne(eq("id", doc.get("id")), doc);
     }
 
 
-    public Document retrieveEntryById(String itemId, String collectionName) {
+    public Document retrieveEntryById(String itemId) {
         BasicDBObject searchQuery = new BasicDBObject();
         searchQuery.put("id", itemId);
-        return getCollection(collectionName).find(searchQuery).first();
+        return getMongoCollection().find(searchQuery).first();
     }
 
     public void deleteEntryinDb(String itemId, MongoCollection<Document> collection) {
