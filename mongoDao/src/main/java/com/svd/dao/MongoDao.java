@@ -32,7 +32,7 @@ public class MongoDao<T> {
         this.daoClazz = clazz;
     }
 
-    public void saveEntryToDatabase(T inputObject, MongoCollection<Document> collection) {
+    public void saveEntryToDatabase(T inputObject) {
         Field[] fields = daoClazz.getDeclaredFields();
         Document doc = new Document();
         for (Field field : fields) {
@@ -49,7 +49,7 @@ public class MongoDao<T> {
                 e.printStackTrace();
             }
         }
-        collection.insertOne(doc);
+        mongoCollection.insertOne(doc);
     }
 
 

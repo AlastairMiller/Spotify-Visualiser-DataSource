@@ -35,7 +35,12 @@ public class DaoIntegrationTest {
 
     private MongodExecutable mongodExe;
     private MongodProcess mongod;
-    private MongoDao mongoDao;
+    private MongoDao<RefinedAlbum> albumDao;
+    private MongoDao<RefinedArtist> artistDao;
+    private MongoDao<RefinedPlaylist> playlistDao;
+    private MongoDao<RefinedTrack> trackDao;
+    private MongoDao<RefinedUser> userDao;
+
     private String hostname = "127.0.0.1";
     private int port = 12345;
 
@@ -50,8 +55,11 @@ public class DaoIntegrationTest {
 
         mongodExe = starter.prepare(mongodConfig);
         mongod = mongodExe.start();
-        MongoClient mongoClient = new MongoClient(hostname, port);
-        mongoDao = new MongoDao<>(new ClientHandler(hostname, port, DATABASE_NAME));
+        albumDao = new MongoDao<>(new ClientHandler(hostname, port, DATABASE_NAME), "RefinedAlbums", RefinedAlbum.class);
+        artistDao = new MongoDao<>(new ClientHandler(hostname, port, DATABASE_NAME), "RefinedArtists", RefinedArtist.class);
+        playlistDao = new MongoDao<>(new ClientHandler(hostname, port, DATABASE_NAME), "RefinedPlaylists", RefinedPlaylist.class);
+        trackDao = new MongoDao<>(new ClientHandler(hostname, port, DATABASE_NAME), "RefinedTracks", RefinedTrack.class);
+        userDao = new MongoDao<>(new ClientHandler(hostname, port, DATABASE_NAME), "RefinedUsers", RefinedUser.class);
     }
 
     @After
@@ -82,7 +90,8 @@ public class DaoIntegrationTest {
                 .spotifyURI("spotify:album:6fpZzsdzd04nqiDPWnF2iw")
                 .build();
 
-        mongoDao.saveEntryToDatabase(RefinedAlbum.class, exampleAlbum, mongoCollection);
+        albumDao.saveEntryToDatabase(exampleAlbum);
+
     }
 
     private void saveExampleTrackToDatabase(MongoCollection<Document> mongoCollection) throws MalformedURLException {
@@ -90,7 +99,7 @@ public class DaoIntegrationTest {
                 .id("3aTrurxagDJfsQRBEOGfMb")
                 .albumId("24BRvmlDhVhjTJsqazdVxm")
                 .artistIds(Collections.singletonList("4yvcSjfu4PC0CYQyLy4wSq"))
-                .discNum(1)
+                .discNumber(1)
                 .durationMs(320654)
                 .explicit(true)
                 .externalURL(new URL("https://open.spotify.com/track/3aTrurxagDJfsQRBEOGfMb"))
@@ -102,7 +111,7 @@ public class DaoIntegrationTest {
                 .spotifyURI("spotify:track:3aTrurxagDJfsQRBEOGfMb")
                 .build();
 
-        mongoDao.saveEntryToDatabase(RefinedTrack.class, exampleTrack, mongoCollection);
+        trackDao.saveEntryToDatabase(exampleTrack);
     }
 
     private void saveExampleArtistToDatabase(MongoCollection<Document> mongoCollection) throws MalformedURLException {
@@ -117,7 +126,7 @@ public class DaoIntegrationTest {
                     .spotifyURI("spotify:artist:5cIc3SBFuBLVxJz58W2tU9")
                     .build();
 
-        mongoDao.saveEntryToDatabase(RefinedArtist.class, exampleArtist, mongoCollection);
+        artistDao.saveEntryToDatabase(exampleArtist);
     }
 
     private void saveExamplePlaylistToDatabase(MongoCollection<Document> mongoCollection) throws MalformedURLException {
@@ -136,7 +145,7 @@ public class DaoIntegrationTest {
                     .spotifyURI("spotify:user:millersinc")
                     .build();
 
-        mongoDao.saveEntryToDatabase(RefinedPlaylist.class, examplePlaylist, mongoCollection);
+        playlistDao.saveEntryToDatabase(examplePlaylist);
     }
 
     private void saveExampleUserToDatabase(MongoCollection<Document> mongoCollection) throws MalformedURLException {
@@ -150,12 +159,12 @@ public class DaoIntegrationTest {
                     .spotifyURI("spotify:user:spotify")
                     .build();
 
-        mongoDao.saveEntryToDatabase(RefinedUser.class, exampleUser, mongoCollection);
+        userDao.saveEntryToDatabase(exampleUser);
     }
 
     @Test
     public void shouldSaveAlbumToDb() throws MalformedURLException {
-        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedAlbums");
+        MongoCollection<Document> mongoCollection = albumDao.getMongoCollection();
         saveExampleAlbumToDatabase(mongoCollection);
         assertThat(mongoCollection.count(), Matchers.is(1L));
     }
@@ -181,16 +190,16 @@ public class DaoIntegrationTest {
                     .spotifyURI("spotify:album:6fpZzsdzd04nqiDPWnF2iw")
                     .build();
 
-        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedAlbums");
+        MongoCollection<Document> mongoCollection = albumDao.getMongoCollection();
         saveExampleAlbumToDatabase(mongoCollection);
-        Object object = mongoDao.retrieveEntryById("6fpZzsdzd04nqiDPWnF2iw", "RefinedAlbums");
+        Object object = albumDao.retrieveEntryById("6fpZzsdzd04nqiDPWnF2iw");
         RefinedAlbum actualAlbum = toAlbum((Document) object);
         Assert.assertEquals(expectedAlbum, actualAlbum);
     }
 
     @Test
     public void shouldSaveTrackToDb() throws MalformedURLException {
-        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedTracks");
+        MongoCollection<Document> mongoCollection = trackDao.getMongoCollection();
         saveExampleTrackToDatabase(mongoCollection);
         assertThat(mongoCollection.count(), Matchers.is(1L));
     }
@@ -201,7 +210,7 @@ public class DaoIntegrationTest {
                     .id("3aTrurxagDJfsQRBEOGfMb")
                     .albumId("24BRvmlDhVhjTJsqazdVxm")
                     .artistIds(Collections.singletonList("4yvcSjfu4PC0CYQyLy4wSq"))
-                    .discNum(1)
+                    .discNumber(1)
                     .durationMs(320654)
                     .explicit(true)
                     .externalURL(new URL("https://open.spotify.com/track/3aTrurxagDJfsQRBEOGfMb"))
@@ -213,16 +222,16 @@ public class DaoIntegrationTest {
                     .spotifyURI("spotify:track:3aTrurxagDJfsQRBEOGfMb")
                     .build();
 
-        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedTracks");
+        MongoCollection<Document> mongoCollection = trackDao.getMongoCollection();
         saveExampleTrackToDatabase(mongoCollection);
-        Object object = mongoDao.retrieveEntryById("3aTrurxagDJfsQRBEOGfMb", "RefinedTracks");
+        Object object = trackDao.retrieveEntryById("3aTrurxagDJfsQRBEOGfMb");
         RefinedTrack actualSong = toTrack((Document) object);
         Assert.assertEquals(expectedSong, actualSong);
     }
 
     @Test
     public void shouldSaveArtistToDb() throws MalformedURLException {
-        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedArtists");
+        MongoCollection<Document> mongoCollection = artistDao.getMongoCollection();
         saveExampleArtistToDatabase(mongoCollection);
         assertThat(mongoCollection.count(), Matchers.is(1L));
     }
@@ -240,17 +249,16 @@ public class DaoIntegrationTest {
                     .spotifyURI("spotify:artist:5cIc3SBFuBLVxJz58W2tU9")
                     .build();
 
-        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedArtists");
+        MongoCollection<Document> mongoCollection = artistDao.getMongoCollection();
         saveExampleArtistToDatabase(mongoCollection);
-        Object object = mongoDao.retrieveEntryById("5cIc3SBFuBLVxJz58W2tU9", "RefinedArtists");
+        Object object = artistDao.retrieveEntryById("5cIc3SBFuBLVxJz58W2tU9");
         RefinedArtist actualArtist = toArtist((Document) object);
         Assert.assertEquals(expectedArtist, actualArtist);
-
     }
 
     @Test
     public void shouldSavePlaylistToDb() throws MalformedURLException {
-        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedPlaylists");
+        MongoCollection<Document> mongoCollection = playlistDao.getMongoCollection();
         saveExamplePlaylistToDatabase(mongoCollection);
         assertThat(mongoCollection.count(), Matchers.is(1L));
     }
@@ -272,16 +280,16 @@ public class DaoIntegrationTest {
                     .spotifyURI("spotify:user:millersinc")
                     .build();
 
-        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedPlaylists");
+        MongoCollection<Document> mongoCollection = playlistDao.getMongoCollection();
         saveExamplePlaylistToDatabase(mongoCollection);
-        Object object = mongoDao.retrieveEntryById("2CTdEa3JWbncC1h8WjnuxZ", "RefinedPlaylists");
+        Object object = playlistDao.retrieveEntryById("2CTdEa3JWbncC1h8WjnuxZ");
         RefinedPlaylist actualPlaylist = toPlaylist((Document) object);
         Assert.assertEquals(expectedPlaylist, actualPlaylist);
     }
 
     @Test
     public void shouldSaveUserToDb() throws MalformedURLException {
-        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedUser");
+        MongoCollection<Document> mongoCollection = userDao.getMongoCollection();
         saveExampleUserToDatabase(mongoCollection);
         assertThat(mongoCollection.count(), Matchers.is(1L));
     }
@@ -298,9 +306,9 @@ public class DaoIntegrationTest {
                 .spotifyURI("spotify:user:spotify")
                 .build();
 
-        MongoCollection<Document> mongoCollection = mongoDao.getClientHandler().getMongoDB().getCollection("RefinedUsers");
+        MongoCollection<Document> mongoCollection = userDao.getMongoCollection();
         saveExampleUserToDatabase(mongoCollection);
-        Object object = mongoDao.retrieveEntryById("spotify", "RefinedUsers");
+        Object object = userDao.retrieveEntryById("spotify");
         RefinedUser actualUser = toUser((Document) object);
         Assert.assertEquals(expectedUser, actualUser);
     }
