@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.net.URI;
 import java.net.URL;
 import java.util.List;
 
@@ -19,7 +18,7 @@ public class RefinedArtist {
     private List<String> genres;
     private URL href;
     private String name;
-    private int followers;
-    private int popularity;
-    private URI uri;
+    private Integer followers;
+    private Integer popularity;
+    private String spotifyURI;
 }

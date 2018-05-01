@@ -15,16 +15,16 @@ import java.util.List;
 @Builder
 public class RefinedTrack {
     private String id;
-    private List<String> refinedAlbumIds;
-    private List<String> refinedArtistIds;
-    private int discNum;
-    private int durationMs;
-    private boolean explicit;
+    private String albumId;
+    private List<String> artistIds;
+    private Integer discNumber;
+    private Integer durationMs;
+    private Boolean explicit;
     private URL externalURL;
     private URL href;
     private String name;
     private URL previewURL;
-    private int trackNumber;
-    private int popularity;
-    private URI uri;
+    private Integer trackNumber;
+    private Integer popularity;
+    private String spotifyURI;
 }
