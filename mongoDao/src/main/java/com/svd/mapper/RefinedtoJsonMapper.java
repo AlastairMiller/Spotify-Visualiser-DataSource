@@ -1,8 +1,11 @@
 package com.svd.mapper;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+@Slf4j
 public class RefinedtoJsonMapper {
 
     public static Object invokeSimpleGetter(Method getter, Object inputObject) {
@@ -12,8 +15,10 @@ public class RefinedtoJsonMapper {
                 return nativeValue.toString();
             }
             return nativeValue;
-        } catch (IllegalAccessException | InvocationTargetException | NullPointerException e) {
-            e.printStackTrace();
+        } catch (IllegalAccessException | InvocationTargetException e) {
+            log.error(e.getMessage());
+        } catch (NullPointerException e){
+            log.error("{} is null", inputObject);
         }
         return null;
     }
