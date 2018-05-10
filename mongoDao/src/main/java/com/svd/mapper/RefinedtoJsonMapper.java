@@ -18,7 +18,7 @@ public class RefinedtoJsonMapper {
         } catch (IllegalAccessException | InvocationTargetException e) {
             log.error(e.getMessage());
         } catch (NullPointerException e){
-            log.error("{} is null", inputObject);
+            log.error("PreviewURL is null");
         }
         return null;
     }
