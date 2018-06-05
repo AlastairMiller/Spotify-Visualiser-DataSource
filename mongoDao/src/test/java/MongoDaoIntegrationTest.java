@@ -1,4 +1,3 @@
-import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.svd.ClientHandler;
 import com.svd.dao.MongoDao;
@@ -29,8 +28,9 @@ import java.util.Date;
 import static com.svd.mapper.JsontoRefinedMapper.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@Deprecated
 @Slf4j
-public class DaoIntegrationTest {
+public class MongoDaoIntegrationTest {
     private static final String DATABASE_NAME = "embedded";
 
     private MongodExecutable mongodExe;

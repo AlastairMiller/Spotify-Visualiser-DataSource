@@ -5,7 +5,6 @@ import com.mongodb.client.MongoCollection;
 import com.svd.ClientHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.BsonDocument;
-import org.bson.BsonElement;
 import org.bson.BsonString;
 import org.bson.Document;
 
@@ -21,12 +20,17 @@ import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
 public abstract class AbstractDao<T> {
 
     @SuppressWarnings("unchecked")
-    private Class<T> clazz = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-    private ClientHandler clientHandler;
-    private MongoCollection<T> mongoCollection;
+    protected Class<T> clazz = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+    protected ClientHandler clientHandler;
+    protected MongoCollection<T> mongoCollection;
 
-    public Document getById(String id) {
+    public T getById(String id) {
         BasicDBObject query = new BasicDBObject("id", id);
+        return mongoCollection.find(query).first();
+    }
+
+    public T getBySpotifyUri(String spotifyId){
+        BasicDBObject query = new BasicDBObject("spotifyURI", spotifyId);
         return mongoCollection.find(query).first();
     }
 
@@ -40,8 +44,7 @@ public abstract class AbstractDao<T> {
     }
 
     public void save(T inputObject) {
-        Document document = convertObjectToDocument(inputObject);
-        mongoCollection.insertOne(document);
+        mongoCollection.insertOne(inputObject);
     }
 
     public void update(String id, T newObject) {
@@ -54,7 +57,7 @@ public abstract class AbstractDao<T> {
         mongoCollection.findOneAndDelete(new BsonDocument("id", new BsonString(id)));
     }
 
-    public Document convertObjectToDocument(T inputObject) {
+    private Document convertObjectToDocument(T inputObject) {
         Field[] fields = clazz.getDeclaredFields();
         Document document = new Document();
         for (Field field : fields) {
