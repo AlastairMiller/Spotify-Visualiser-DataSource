@@ -4,5 +4,5 @@ import org.springframework.stereotype.Repository;
 import refinedDataModels.RefinedUser;
 
 @Repository
-public class UserDao extends AbstractDao<RefinedUser> {
+public class UserDao  {
 }
