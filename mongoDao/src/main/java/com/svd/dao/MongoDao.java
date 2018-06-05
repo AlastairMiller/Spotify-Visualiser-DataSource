@@ -18,6 +18,7 @@ import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
 
 @Slf4j
 @Data
+@Deprecated
 public class MongoDao<T> {
 
     private final ClientHandler clientHandler;
