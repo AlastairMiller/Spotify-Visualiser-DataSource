@@ -1,4 +1,4 @@
-package com.svd.mapper;
+package com.svd.util;
 
 import com.google.common.testing.ArbitraryInstances;
 

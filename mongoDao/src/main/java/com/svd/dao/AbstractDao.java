@@ -29,7 +29,12 @@ public abstract class AbstractDao<T> {
         return mongoCollection.find(query).first();
     }
 
-    public T getBySpotifyUri(String spotifyId){
+    public List<T> getMultipleById(List<String> ids) {
+        BasicDBObject query = new BasicDBObject("id", ids);
+        return mongoCollection.find(query).into(new ArrayList<>());
+    }
+
+    public T getBySpotifyUri(String spotifyId) {
         BasicDBObject query = new BasicDBObject("spotifyURI", spotifyId);
         return mongoCollection.find(query).first();
     }
