@@ -1,6 +1,8 @@
 package com.svd.dao;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.client.MongoCollection;
+import com.svd.ClientHandler;
 import org.springframework.stereotype.Repository;
 import refinedDataModels.RefinedTrack;
 
@@ -13,6 +15,11 @@ import static com.mongodb.client.model.Sorts.orderBy;
 
 @Repository
 public class TrackDao extends AbstractDao<RefinedTrack> {
+
+
+    public TrackDao(ClientHandler clientHandler, String collectionName) {
+        super(clientHandler, collectionName);
+    }
 
     public List<RefinedTrack> getAllOnAlbum(String albumId){
         BasicDBObject query = new BasicDBObject("albumId", albumId);

@@ -10,8 +10,10 @@ import org.bson.Document;
 import org.springframework.stereotype.Repository;
 import refinedDataModels.RefinedUser;
 
+import java.beans.ConstructorProperties;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,13 @@ public class UserDao implements DaoInterface<RefinedUser> {
 
     protected ClientHandler clientHandler;
     protected MongoCollection<RefinedUser> mongoCollection;
+
+
+    @ConstructorProperties({"clientHandler", "mongoCollection"})
+    public UserDao(ClientHandler clientHandler, MongoCollection<RefinedUser> mongoCollection) {
+        this.clientHandler = clientHandler;
+        this.mongoCollection = mongoCollection;
+    }
 
     @Override
     public RefinedUser getById(String id) {

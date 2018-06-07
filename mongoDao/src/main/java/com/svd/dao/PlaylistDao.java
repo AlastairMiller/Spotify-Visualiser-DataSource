@@ -1,6 +1,8 @@
 package com.svd.dao;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.client.MongoCollection;
+import com.svd.ClientHandler;
 import org.springframework.stereotype.Repository;
 import refinedDataModels.RefinedPlaylist;
 
@@ -12,6 +14,11 @@ import static com.mongodb.client.model.Sorts.orderBy;
 
 @Repository
 public class PlaylistDao extends AbstractDao<RefinedPlaylist> {
+
+
+    public PlaylistDao(ClientHandler clientHandler, String collectionName) {
+        super(clientHandler, collectionName);
+    }
 
     @Override
     public List<RefinedPlaylist> getMostPopular(int limit, int offset) {

@@ -3,11 +3,14 @@ package com.svd.dao;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.svd.ClientHandler;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.BsonDocument;
 import org.bson.BsonString;
 import org.bson.Document;
+import refinedDataModels.RefinedAlbum;
 
+import java.beans.ConstructorProperties;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
@@ -19,12 +22,19 @@ import static com.mongodb.client.model.Sorts.orderBy;
 import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
 
 @Slf4j
+@Data
 public abstract class AbstractDao<T> implements DaoInterface<T> {
 
     @SuppressWarnings("unchecked")
-    protected Class<T> clazz = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
+    protected final Class<T> clazz = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
     protected ClientHandler clientHandler;
     protected MongoCollection<T> mongoCollection;
+
+    @ConstructorProperties({"clientHandler", "mongoCollectionName"})
+    public AbstractDao(ClientHandler clientHandler, String collectionName) {
+        this.clientHandler = clientHandler;
+        this.mongoCollection = this.clientHandler.getMongoDB().getCollection(collectionName, clazz);
+    }
 
     @Override
     public T getById(String id) {

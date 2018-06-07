@@ -1,7 +1,11 @@
 package com.svd.dao;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.client.MongoCollection;
+import com.svd.ClientHandler;
 import com.svd.util.SortOrder;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import refinedDataModels.RefinedAlbum;
 
@@ -13,6 +17,11 @@ import static com.mongodb.client.model.Sorts.*;
 
 @Repository
 public class AlbumDao extends AbstractDao<RefinedAlbum> {
+
+
+    public AlbumDao(ClientHandler clientHandler, String collectionName) {
+        super(clientHandler, collectionName);
+    }
 
     public List<String> getAlbumArtistIds(String albumId) {
         return getById(albumId)

@@ -1,6 +1,8 @@
 package com.svd.dao;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.client.MongoCollection;
+import com.svd.ClientHandler;
 import org.springframework.stereotype.Repository;
 import refinedDataModels.RefinedArtist;
 
@@ -12,6 +14,11 @@ import static com.mongodb.client.model.Sorts.orderBy;
 
 @Repository
 public class ArtistDao extends AbstractDao<RefinedArtist> {
+
+
+    public ArtistDao(ClientHandler clientHandler, String collectionName) {
+        super(clientHandler, collectionName);
+    }
 
     public List<RefinedArtist> getAllByGenre(int offset, int limit, String genreName){
         BasicDBObject query = new BasicDBObject("genres", genreName);
