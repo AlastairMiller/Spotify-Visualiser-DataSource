@@ -8,16 +8,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.mongodb.client.model.Sorts.descending;
+import static com.mongodb.client.model.Sorts.orderBy;
 
 @Repository
 public class ArtistDao extends AbstractDao<RefinedArtist> {
 
     public List<RefinedArtist> getAllByGenre(int offset, int limit, String genreName){
         BasicDBObject query = new BasicDBObject("genres", genreName);
-        return mongoCollection.find().skip(offset).limit(limit).into(new ArrayList<>());
+        return mongoCollection.find(query)
+                .skip(offset)
+                .limit(limit)
+                .into(new ArrayList<>());
     }
 
     public List<RefinedArtist> getMostFollowedArtists(int offset, int limit){
-        return mongoCollection.find().skip(offset).limit(limit).sort(descending("followers")).into(new ArrayList<>());
+        return mongoCollection.find()
+                .skip(offset)
+                .limit(limit)
+                .sort(orderBy(descending("followers")))
+                .into(new ArrayList<>());
     }
+
 }

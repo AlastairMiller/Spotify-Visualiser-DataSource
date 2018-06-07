@@ -14,50 +14,64 @@ import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.mongodb.client.model.Sorts.descending;
+import static com.mongodb.client.model.Sorts.orderBy;
 import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
 
 @Slf4j
-public abstract class AbstractDao<T> {
+public abstract class AbstractDao<T> implements DaoInterface<T> {
 
     @SuppressWarnings("unchecked")
     protected Class<T> clazz = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
     protected ClientHandler clientHandler;
     protected MongoCollection<T> mongoCollection;
 
+    @Override
     public T getById(String id) {
         BasicDBObject query = new BasicDBObject("id", id);
-        return mongoCollection.find(query).first();
+        return mongoCollection.find(query)
+                .first();
     }
 
+    @Override
     public List<T> getMultipleById(List<String> ids) {
         BasicDBObject query = new BasicDBObject("id", ids);
-        return mongoCollection.find(query).into(new ArrayList<>());
+        return mongoCollection.find(query)
+                .into(new ArrayList<>());
     }
 
+    @Override
     public T getBySpotifyUri(String spotifyId) {
         BasicDBObject query = new BasicDBObject("spotifyURI", spotifyId);
-        return mongoCollection.find(query).first();
+        return mongoCollection.find(query)
+                .first();
     }
 
     public List<T> getAllMatchingNames(String name) {
         BasicDBObject query = new BasicDBObject("name", name);
-        return mongoCollection.find(query).into(new ArrayList<>());
+        return mongoCollection.find(query)
+                .into(new ArrayList<>());
     }
 
     public List<T> getMostPopular(int limit, int offset) {
-        return mongoCollection.find().sort(new BsonDocument("popularity", new BsonString("-1"))).into(new ArrayList<>());
+        return mongoCollection.find()
+                .sort(orderBy(descending("popularity")))
+                .into(new ArrayList<>());
     }
 
+    @Override
     public void save(T inputObject) {
         mongoCollection.insertOne(inputObject);
     }
 
+    @Override
     public void update(String id, T newObject) {
         BasicDBObject query = new BasicDBObject("id", id);
         Document document = convertObjectToDocument(newObject);
         mongoCollection.findOneAndUpdate(query, document);
     }
 
+    @Override
     public void delete(String id) {
         mongoCollection.findOneAndDelete(new BsonDocument("id", new BsonString(id)));
     }

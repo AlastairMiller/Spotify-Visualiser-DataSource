@@ -1,30 +1,43 @@
 package com.svd.dao;
 
-import com.mongodb.client.model.Projections;
+import com.mongodb.BasicDBObject;
 import com.svd.util.SortOrder;
-import org.bson.BsonDocument;
-import org.bson.BsonString;
-import org.bson.conversions.Bson;
 import org.springframework.stereotype.Repository;
 import refinedDataModels.RefinedAlbum;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
-import static com.mongodb.client.model.Sorts.ascending;
-import static com.mongodb.client.model.Sorts.descending;
-import static com.mongodb.client.model.Sorts.orderBy;
+import static com.mongodb.client.model.Sorts.*;
 
 @Repository
 public class AlbumDao extends AbstractDao<RefinedAlbum> {
 
     public List<String> getAlbumArtistIds(String albumId) {
-        return getById(albumId).getArtistsIds();
+        return getById(albumId)
+                .getArtistsIds();
     }
 
     public List<String> getAlbumTrackIds(String albumId) {
-        return getById(albumId).getTrackIds();
+        return getById(albumId)
+                .getTrackIds();
+    }
+
+    public List<RefinedAlbum> geAllfromArtistId(int offset, int limit, String artistId) {
+        BasicDBObject query = new BasicDBObject("artistIds", artistId);
+        return mongoCollection.find(query)
+                .skip(offset)
+                .limit(limit)
+                .into(new ArrayList<>());
+    }
+
+    public List<RefinedAlbum> getAllfromTrackId(int offset, int limit, String trackId) {
+        BasicDBObject query = new BasicDBObject("trackIds", trackId);
+        return mongoCollection.find(query)
+                .skip(offset)
+                .limit(limit)
+                .into(new ArrayList<>());
     }
 
     public List<RefinedAlbum> getByReleaseDate(int offset, int limit) {
@@ -33,9 +46,26 @@ public class AlbumDao extends AbstractDao<RefinedAlbum> {
 
     public List<RefinedAlbum> getByReleaseDate(int offset, int limit, SortOrder sortOrder) {
         if (sortOrder.equals(SortOrder.Descending)) {
-            return mongoCollection.find().skip(offset).limit(limit).sort(orderBy(ascending("releaseDate"))).into(new ArrayList<>());
-        }else {
-            return mongoCollection.find().sort(orderBy(descending("releaseDate"))).into(new ArrayList<>());
+            return mongoCollection.find()
+                    .skip(offset)
+                    .limit(limit)
+                    .sort(orderBy(ascending("releaseDate")))
+                    .into(new ArrayList<>());
+        } else {
+            return mongoCollection.find()
+                    .skip(offset)
+                    .limit(limit)
+                    .sort(orderBy(descending("releaseDate")))
+                    .into(new ArrayList<>());
         }
+    }
+
+    public List<RefinedAlbum> getAlbumsFromDate(int offset, int limit, Date date) {
+        BasicDBObject query = new BasicDBObject("releaseDate", date);
+        return mongoCollection.find(query)
+                .skip(offset)
+                .limit(limit)
+                .sort(orderBy(descending("name")))
+                .into(new ArrayList<>());
     }
 }
