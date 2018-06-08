@@ -13,10 +13,10 @@ import static com.mongodb.client.model.Sorts.descending;
 import static com.mongodb.client.model.Sorts.orderBy;
 
 @Repository
-public class PlaylistDao extends AbstractDao<RefinedPlaylist> {
+public class RefinedPlaylistDao extends AbstractDao<RefinedPlaylist> {
 
 
-    public PlaylistDao(ClientHandler clientHandler, String collectionName) {
+    public RefinedPlaylistDao(ClientHandler clientHandler, String collectionName) {
         super(clientHandler, collectionName);
     }
 

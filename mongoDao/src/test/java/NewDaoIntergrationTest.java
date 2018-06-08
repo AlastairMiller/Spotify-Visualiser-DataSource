@@ -1,6 +1,6 @@
 import com.mongodb.client.MongoCollection;
 import com.svd.ClientHandler;
-import com.svd.dao.AlbumDao;
+import com.svd.dao.RefinedAlbumDao;
 import com.svd.dao.MongoDao;
 import de.flapdoodle.embed.mongo.MongodExecutable;
 import de.flapdoodle.embed.mongo.MongodProcess;
@@ -36,7 +36,7 @@ public class NewDaoIntergrationTest {
 
     private MongodExecutable mongodExe;
     private MongodProcess mongod;
-    private AlbumDao albumDao;
+    private RefinedAlbumDao refinedAlbumDao;
     private MongoDao<RefinedArtist> artistDao;
     private MongoDao<RefinedPlaylist> playlistDao;
     private MongoDao<RefinedTrack> trackDao;
@@ -57,7 +57,7 @@ public class NewDaoIntergrationTest {
 
         mongodExe = starter.prepare(mongodConfig);
         mongod = mongodExe.start();
-        albumDao = new AlbumDao(new ClientHandler(hostname, port, DATABASE_NAME), "RefinedAlbums");
+        refinedAlbumDao = new RefinedAlbumDao(new ClientHandler(hostname, port, DATABASE_NAME), "RefinedAlbums");
         artistDao = new MongoDao<>(new ClientHandler(hostname, port, DATABASE_NAME), "RefinedArtists", RefinedArtist.class);
         playlistDao = new MongoDao<>(new ClientHandler(hostname, port, DATABASE_NAME), "RefinedPlaylists", RefinedPlaylist.class);
         trackDao = new MongoDao<>(new ClientHandler(hostname, port, DATABASE_NAME), "RefinedTracks", RefinedTrack.class);
@@ -92,7 +92,7 @@ public class NewDaoIntergrationTest {
                 .spotifyURI("spotify:album:6fpZzsdzd04nqiDPWnF2iw")
                 .build();
 
-        albumDao.save(exampleAlbum);
+        refinedAlbumDao.save(exampleAlbum);
 
     }
 
@@ -166,7 +166,7 @@ public class NewDaoIntergrationTest {
 
     @Test
     public void shouldSaveAlbumToDb() throws MalformedURLException {
-        MongoCollection<RefinedAlbum> mongoCollection = albumDao.getMongoCollection();
+        MongoCollection<RefinedAlbum> mongoCollection = refinedAlbumDao.getMongoCollection();
         saveExampleAlbumToDatabase(mongoCollection);
         assertThat(mongoCollection.count(), Matchers.is(1L));
     }
@@ -192,9 +192,9 @@ public class NewDaoIntergrationTest {
                 .spotifyURI("spotify:album:6fpZzsdzd04nqiDPWnF2iw")
                 .build();
 
-        MongoCollection<RefinedAlbum> mongoCollection = albumDao.getMongoCollection();
+        MongoCollection<RefinedAlbum> mongoCollection = refinedAlbumDao.getMongoCollection();
         saveExampleAlbumToDatabase(mongoCollection);
-        RefinedAlbum album = albumDao.getById("6fpZzsdzd04nqiDPWnF2iw");
+        RefinedAlbum album = refinedAlbumDao.getById("6fpZzsdzd04nqiDPWnF2iw");
         Assert.assertEquals(expectedAlbum, album);
     }
 

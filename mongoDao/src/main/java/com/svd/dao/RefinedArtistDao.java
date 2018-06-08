@@ -13,10 +13,10 @@ import static com.mongodb.client.model.Sorts.descending;
 import static com.mongodb.client.model.Sorts.orderBy;
 
 @Repository
-public class ArtistDao extends AbstractDao<RefinedArtist> {
+public class RefinedArtistDao extends AbstractDao<RefinedArtist> {
 
 
-    public ArtistDao(ClientHandler clientHandler, String collectionName) {
+    public RefinedArtistDao(ClientHandler clientHandler, String collectionName) {
         super(clientHandler, collectionName);
     }
 

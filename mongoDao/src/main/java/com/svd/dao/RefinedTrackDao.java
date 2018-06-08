@@ -14,10 +14,10 @@ import static com.mongodb.client.model.Sorts.descending;
 import static com.mongodb.client.model.Sorts.orderBy;
 
 @Repository
-public class TrackDao extends AbstractDao<RefinedTrack> {
+public class RefinedTrackDao extends AbstractDao<RefinedTrack> {
 
 
-    public TrackDao(ClientHandler clientHandler, String collectionName) {
+    public RefinedTrackDao(ClientHandler clientHandler, String collectionName) {
         super(clientHandler, collectionName);
     }
 

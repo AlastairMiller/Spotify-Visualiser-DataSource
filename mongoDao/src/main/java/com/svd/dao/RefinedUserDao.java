@@ -21,14 +21,14 @@ import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
 
 @Repository
 @Slf4j
-public class UserDao implements DaoInterface<RefinedUser> {
+public class RefinedUserDao implements DaoInterface<RefinedUser> {
 
     protected ClientHandler clientHandler;
     protected MongoCollection<RefinedUser> mongoCollection;
 
 
     @ConstructorProperties({"clientHandler", "mongoCollection"})
-    public UserDao(ClientHandler clientHandler, MongoCollection<RefinedUser> mongoCollection) {
+    public RefinedUserDao(ClientHandler clientHandler, MongoCollection<RefinedUser> mongoCollection) {
         this.clientHandler = clientHandler;
         this.mongoCollection = mongoCollection;
     }
