@@ -14,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class RefinedTrack {
+
     private String id;
     private String albumId;
     private List<String> artistIds;

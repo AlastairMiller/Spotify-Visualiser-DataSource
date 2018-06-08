@@ -1,7 +1,5 @@
 package com.svd.util;
 
-import com.google.common.testing.ArbitraryInstances;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
@@ -12,7 +10,7 @@ import java.util.Map;
 
 public class RefinedObjectBuilder<T> {
 
-    private final Class<?> clazz;
+    private final Class<T> clazz;
     private Map<String, Object> map;
 
     public RefinedObjectBuilder(Class<T> clazz) {
@@ -72,8 +70,8 @@ public class RefinedObjectBuilder<T> {
         method.invoke(instance, value);
     }
 
-    public T build() {
-        T instance = (T) ArbitraryInstances.get(clazz);
+    public T build() throws IllegalAccessException, InstantiationException {
+        T instance = clazz.newInstance();
         try {
             for (Map.Entry<String, Object> val : map.entrySet()) {
                 setProperty(instance, val.getKey(), val.getValue());
