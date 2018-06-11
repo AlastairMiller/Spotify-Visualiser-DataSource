@@ -1,8 +1,10 @@
 package com.svd.dao;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.client.model.Filters;
 import com.svd.ClientHandler;
 import com.svd.util.SortOrder;
+import org.bson.Document;
 import org.springframework.stereotype.Repository;
 import refinedDataModels.RefinedAlbum;
 
@@ -10,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Sorts.*;
 
 @Repository
@@ -31,16 +34,14 @@ public class RefinedAlbumDao extends AbstractDao<RefinedAlbum> {
     }
 
     public List<RefinedAlbum> geAllfromArtistId(int offset, int limit, String artistId) {
-        BasicDBObject query = new BasicDBObject("artistIds", artistId);
-        return mongoCollection.find(query)
+        return mongoCollection.find(eq("artistsIds", artistId))
                 .skip(offset)
                 .limit(limit)
                 .into(new ArrayList<>());
     }
 
     public List<RefinedAlbum> getAllfromTrackId(int offset, int limit, String trackId) {
-        BasicDBObject query = new BasicDBObject("trackIds", trackId);
-        return mongoCollection.find(query)
+        return mongoCollection.find(eq("trackIds", trackId))
                 .skip(offset)
                 .limit(limit)
                 .into(new ArrayList<>());
@@ -67,8 +68,7 @@ public class RefinedAlbumDao extends AbstractDao<RefinedAlbum> {
     }
 
     public List<RefinedAlbum> getAlbumsFromDate(int offset, int limit, Date date) {
-        BasicDBObject query = new BasicDBObject("releaseDate", date);
-        return mongoCollection.find(query)
+        return mongoCollection.find(eq("releaseDate", date))
                 .skip(offset)
                 .limit(limit)
                 .sort(orderBy(descending("name")))

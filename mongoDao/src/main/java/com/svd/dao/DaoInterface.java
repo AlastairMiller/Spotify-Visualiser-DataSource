@@ -12,6 +12,8 @@ public interface DaoInterface<T> {
 
     void save(T inputObject);
 
+    void saveList(List<T> input);
+
     void update(String id, T newObject);
 
     void delete(String id);

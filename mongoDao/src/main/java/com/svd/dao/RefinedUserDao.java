@@ -62,6 +62,11 @@ public class RefinedUserDao implements DaoInterface<RefinedUser> {
     }
 
     @Override
+    public void saveList(List<RefinedUser> refinedUserList) {
+        mongoCollection.insertMany(refinedUserList);
+    }
+
+    @Override
     public void update(String id, RefinedUser newObject) {
         BasicDBObject query = new BasicDBObject("id", id);
         Document document = convertObjectToDocument(newObject);

@@ -1,6 +1,5 @@
 package com.svd.dao;
 
-import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.svd.ClientHandler;
 import lombok.Data;
@@ -8,7 +7,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.bson.BsonDocument;
 import org.bson.BsonString;
 import org.bson.Document;
-import refinedDataModels.RefinedAlbum;
 
 import java.beans.ConstructorProperties;
 import java.lang.reflect.Field;
@@ -17,6 +15,7 @@ import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Sorts.descending;
 import static com.mongodb.client.model.Sorts.orderBy;
 import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
@@ -38,28 +37,24 @@ public abstract class AbstractDao<T> implements DaoInterface<T> {
 
     @Override
     public T getById(String id) {
-        BasicDBObject query = new BasicDBObject("id", id);
-        return mongoCollection.find(query)
+        return mongoCollection.find(eq("id", id))
                 .first();
     }
 
     @Override
     public List<T> getMultipleById(List<String> ids) {
-        BasicDBObject query = new BasicDBObject("id", ids);
-        return mongoCollection.find(query)
+        return mongoCollection.find(eq("id", ids))
                 .into(new ArrayList<>());
     }
 
     @Override
     public T getBySpotifyUri(String spotifyId) {
-        BasicDBObject query = new BasicDBObject("spotifyURI", spotifyId);
-        return mongoCollection.find(query)
+        return mongoCollection.find(eq("spotifyURI", spotifyId))
                 .first();
     }
 
     public List<T> getAllMatchingNames(String name) {
-        BasicDBObject query = new BasicDBObject("name", name);
-        return mongoCollection.find(query)
+        return mongoCollection.find(eq("name", name))
                 .into(new ArrayList<>());
     }
 
@@ -75,10 +70,14 @@ public abstract class AbstractDao<T> implements DaoInterface<T> {
     }
 
     @Override
+    public void saveList(List<T> inputList) {
+        mongoCollection.insertMany(inputList);
+    }
+
+    @Override
     public void update(String id, T newObject) {
-        BasicDBObject query = new BasicDBObject("id", id);
         Document document = convertObjectToDocument(newObject);
-        mongoCollection.findOneAndUpdate(query, document);
+        mongoCollection.findOneAndUpdate(eq("id", id), document);
     }
 
     @Override
