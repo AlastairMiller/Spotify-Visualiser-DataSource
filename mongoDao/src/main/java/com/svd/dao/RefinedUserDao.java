@@ -3,6 +3,7 @@ package com.svd.dao;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.svd.ClientHandler;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.BsonDocument;
 import org.bson.BsonString;
@@ -13,7 +14,6 @@ import refinedDataModels.RefinedUser;
 import java.beans.ConstructorProperties;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,16 +21,18 @@ import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
 
 @Repository
 @Slf4j
+@Data
 public class RefinedUserDao implements DaoInterface<RefinedUser> {
 
     protected ClientHandler clientHandler;
     protected MongoCollection<RefinedUser> mongoCollection;
+    private final Class<RefinedUser> clazz = RefinedUser.class;
 
 
     @ConstructorProperties({"clientHandler", "mongoCollection"})
-    public RefinedUserDao(ClientHandler clientHandler, MongoCollection<RefinedUser> mongoCollection) {
+    public RefinedUserDao(ClientHandler clientHandler, String collectionName) {
         this.clientHandler = clientHandler;
-        this.mongoCollection = mongoCollection;
+        this.mongoCollection = this.clientHandler.getMongoDB().getCollection(collectionName, clazz);
     }
 
     @Override

@@ -11,6 +11,7 @@ import de.flapdoodle.embed.mongo.distribution.Version;
 import de.flapdoodle.embed.process.runtime.Network;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Assert;
@@ -170,7 +171,7 @@ public class MongoDaoIntegrationTest {
     }
 
     @Test
-    public void shouldReadSavedAlbumFromDb() throws MalformedURLException {
+    public void shouldReadSavedAlbumFromDb() throws MalformedURLException, IllegalAccessException, InstantiationException {
         RefinedAlbum expectedAlbum = RefinedAlbum.builder()
                     .id("6fpZzsdzd04nqiDPWnF2iw")
                     .name("All I Need (Deluxe Version)")
@@ -205,7 +206,7 @@ public class MongoDaoIntegrationTest {
     }
 
     @Test
-    public void shouldReadSavedTrackFromDb() throws MalformedURLException {
+    public void shouldReadSavedTrackFromDb() throws MalformedURLException, IllegalAccessException, InstantiationException {
         RefinedTrack expectedSong = RefinedTrack.builder()
                     .id("3aTrurxagDJfsQRBEOGfMb")
                     .albumId("24BRvmlDhVhjTJsqazdVxm")
@@ -237,7 +238,7 @@ public class MongoDaoIntegrationTest {
     }
 
     @Test
-    public void shouldReadSavedArtistFromDb() throws MalformedURLException {
+    public void shouldReadSavedArtistFromDb() throws MalformedURLException, IllegalAccessException, InstantiationException {
         RefinedArtist expectedArtist = RefinedArtist.builder()
                     .id("5cIc3SBFuBLVxJz58W2tU9")
                     .externalURL(new URL("https://open.spotify.com/artist/5cIc3SBFuBLVxJz58W2tU9"))
@@ -264,7 +265,7 @@ public class MongoDaoIntegrationTest {
     }
 
     @Test
-    public void shouldReadSavedPlaylistFromDb() throws MalformedURLException {
+    public void shouldReadSavedPlaylistFromDb() throws MalformedURLException, IllegalAccessException, InstantiationException {
         RefinedPlaylist expectedPlaylist = RefinedPlaylist.builder()
                     .id("2CTdEa3JWbncC1h8WjnuxZ")
                     .externalURL(new URL("https://open.spotify.com/user/millersinc"))
@@ -295,7 +296,7 @@ public class MongoDaoIntegrationTest {
     }
 
     @Test
-    public void shouldReadSavedUserFromDb() throws MalformedURLException {
+    public void shouldReadSavedUserFromDb() throws MalformedURLException, IllegalAccessException, InstantiationException {
         RefinedUser expectedUser = RefinedUser.builder()
                 .id("spotify")
                 .displayName("Spotify")

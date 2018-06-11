@@ -10,8 +10,8 @@
     <packaging>pom</packaging>
     <version>1.0.4-SNAPSHOT</version>
     <modules>
-        <module>mongoDao</module>
         <module>mongoDatamodel</module>
+        <module>mongoDao</module>
     </modules>
     <scm>
         <developerConnection>scm:git:https://github.com/AlastairMiller/Spotify-Visualiser-DataSource.git</developerConnection>
