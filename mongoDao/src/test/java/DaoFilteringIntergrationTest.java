@@ -1,5 +1,6 @@
 import com.svd.ClientHandler;
 import com.svd.dao.*;
+import com.svd.util.SortOrder;
 import de.flapdoodle.embed.mongo.MongodExecutable;
 import de.flapdoodle.embed.mongo.MongodProcess;
 import de.flapdoodle.embed.mongo.MongodStarter;
@@ -115,7 +116,7 @@ public class DaoFilteringIntergrationTest {
 
         assertThat(refinedAlbumDao.getMongoCollection().count(), is(3L));
 
-        List<RefinedAlbum> filteredForArtistChvrches = refinedAlbumDao.geAllfromArtistId(0,10,"3CjlHNtplJyTf9npxaPl5w");
+        List<RefinedAlbum> filteredForArtistChvrches = refinedAlbumDao.geAllfromArtistId(0, 10, "3CjlHNtplJyTf9npxaPl5w");
 
         assertThat(filteredForArtistChvrches.size(), is(2));
         assertThat(filteredForArtistChvrches.get(0), is(loveIsDead));
@@ -124,7 +125,58 @@ public class DaoFilteringIntergrationTest {
     }
 
     @Test
-    public void shouldSortByNewest(){
-        
+    public void shouldSortByNewest() throws MalformedURLException {
+        RefinedAlbum loveIsDead = RefinedAlbum.builder()
+                .id("2hshVOA4ULsMGHPDiUaDbJ")
+                .name("Love Is Dead")
+                .artistsIds(Collections.singletonList("3CjlHNtplJyTf9npxaPl5w"))
+                .trackIds(new ArrayList<>())
+                .imageURL(new URL("https://i.scdn.co/image/23236f96e36c163099b4770b5aa4f04146b71a7e"))
+                .releaseDate(new Date(1527202800000L))
+                .popularity(61)
+                .externalURL(new URL("https://open.spotify.com/artist/3CjlHNtplJyTf9npxaPl5w"))
+                .href(new URL("https://api.spotify.com/v1/artists/3CjlHNtplJyTf9npxaPl5w"))
+                .spotifyURI("spotify:album:2hshVOA4ULsMGHPDiUaDbJ")
+                .build();
+
+        RefinedAlbum everyOpenEye = RefinedAlbum.builder()
+                .id("3vz4V1QW1DBzqvNKT1BMgg")
+                .name("Every Open Eye (Extended Edition)")
+                .artistsIds(Collections.singletonList("3CjlHNtplJyTf9npxaPl5w"))
+                .trackIds(new ArrayList<>())
+                .imageURL(new URL("https://i.scdn.co/image/573a8b598366a3fb17ba2fdf5ec0beda7ec72d19"))
+                .releaseDate(new Date(1469746800000L))
+                .popularity(48)
+                .externalURL(new URL("https://open.spotify.com/album/3vz4V1QW1DBzqvNKT1BMgg"))
+                .href(new URL("https://api.spotify.com/v1/albums/3vz4V1QW1DBzqvNKT1BMgg"))
+                .spotifyURI("spotify:album:3vz4V1QW1DBzqvNKT1BMgg")
+                .build();
+
+        RefinedAlbum raw = RefinedAlbum.builder()
+                .id("1VyusuPKHWr2fC5l77hi1L")
+                .name("Raw")
+                .artistsIds(Collections.singletonList("4TrraAsitQKl821DQY42cZ"))
+                .trackIds(new ArrayList<>())
+                .imageURL(new URL("https://i.scdn.co/image/ceb1f2d11f142684bbf2264c5d39242e41ca1f6e"))
+                .releaseDate(new Date(1523574000000L))
+                .popularity(63)
+                .externalURL(new URL("https://open.spotify.com/album/1VyusuPKHWr2fC5l77hi1L"))
+                .href(new URL("https://api.spotify.com/v1/albums/1VyusuPKHWr2fC5l77hi1L"))
+                .spotifyURI("spotify:album:1VyusuPKHWr2fC5l77hi1L")
+                .build();
+
+        List<RefinedAlbum> albumsToPersist = new ArrayList<RefinedAlbum>() {{
+            add(loveIsDead);
+            add(everyOpenEye);
+            add(raw);
+        }};
+        refinedAlbumDao.saveList(albumsToPersist);
+
+        assertThat(refinedAlbumDao.getMongoCollection().count(), is(3L));
+
+        List<RefinedAlbum> sortedByNewest = refinedAlbumDao.getByReleaseDate(0, 10, SortOrder.Descending);
+
+        assertThat(sortedByNewest.get(0),);
+
     }
 }
