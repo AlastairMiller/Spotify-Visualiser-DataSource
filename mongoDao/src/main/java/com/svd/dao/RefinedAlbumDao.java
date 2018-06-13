@@ -1,10 +1,7 @@
 package com.svd.dao;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.client.model.Filters;
 import com.svd.ClientHandler;
 import com.svd.util.SortOrder;
-import org.bson.Document;
 import org.springframework.stereotype.Repository;
 import refinedDataModels.RefinedAlbum;
 
@@ -68,7 +65,7 @@ public class RefinedAlbumDao extends AbstractDao<RefinedAlbum> {
     }
 
     public List<RefinedAlbum> getAlbumsFromDate(int offset, int limit, Date date) {
-        return mongoCollection.find(eq("releaseDate", date))
+        return mongoCollection.find(eq("releaseDate", date.getTime()))
                 .skip(offset)
                 .limit(limit)
                 .sort(orderBy(descending("name")))
