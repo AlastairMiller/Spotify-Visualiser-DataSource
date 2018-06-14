@@ -134,8 +134,8 @@ public class DaoFilteringIntegrationTest {
             .id("6NEs2Ky3g64uhhpcjJWZPv")
             .externalURL(new URL("https://open.spotify.com/user/millersinc/playlist/6NEs2Ky3g64uhhpcjJWZPv"))
             .numOfFollowers(0)
-            .href("https://api.spotify.com/v1/users/millersinc/playlists/6NEs2Ky3g64uhhpcjJWZPv")
-            .imageURL("https://i.scdn.co/image/aff27e3ce2b5047d009405c292c64b3ccf9d629f")
+            .href(new URL("https://api.spotify.com/v1/users/millersinc/playlists/6NEs2Ky3g64uhhpcjJWZPv"))
+            .imageURL(new URL("https://i.scdn.co/image/aff27e3ce2b5047d009405c292c64b3ccf9d629f"))
             .name("Datasource Test Playlist 1")
             .description("Test 1")
             .userId("millersinc")
@@ -150,7 +150,7 @@ public class DaoFilteringIntegrationTest {
     private final RefinedPlaylist datasourceTestPlaylist2 = RefinedPlaylist.builder()
             .id("459xU1FWolimrAWkUpFEM9")
             .externalURL(new URL("https://open.spotify.com/user/millersinc/playlist/459xU1FWolimrAWkUpFEM9"))
-            .numOfFollowers(0)
+            .numOfFollowers(3)
             .href(new URL("https://api.spotify.com/v1/users/millersinc/playlists/459xU1FWolimrAWkUpFEM9"))
             .imageURL(new URL("https://i.scdn.co/image/a4e52d20c83c723f8c40a215e5feb45c4db75cbb"))
             .name("Datasource Test Playlist 3")
@@ -167,12 +167,12 @@ public class DaoFilteringIntegrationTest {
     private final RefinedPlaylist datasourceTestPlaylist3 = RefinedPlaylist.builder()
             .id("007EOmHh4iH9rk6hvVWGXt")
             .externalURL(new URL("https://open.spotify.com/user/millersinc/playlist/007EOmHh4iH9rk6hvVWGXt"))
-            .numOfFollowers(0)
+            .numOfFollowers(2)
             .href(new URL("https://api.spotify.com/v1/users/millersinc/playlists/007EOmHh4iH9rk6hvVWGXt"))
             .imageURL(new URL("https://i.scdn.co/image/aff27e3ce2b5047d009405c292c64b3ccf9d629f"))
             .name("Datasource Test Playlist 3")
             .description("Test 3")
-            .userId("millersinc")
+            .userId("notmillersinc")
             .trackIds(new ArrayList<String>() {{
                 add("20CNpCKq1oTdvekXaboyeq");
                 add("2374M0fQpWi3dLnB54qaLX");
@@ -285,7 +285,7 @@ public class DaoFilteringIntegrationTest {
     }
 
     @Test
-    public void getMostFollowedArtists() {
+    public void shouldGetMostFollowedArtists() {
         List<RefinedArtist> artistsToSave = new ArrayList<RefinedArtist>() {{
             add(nothingButThieves);
             add(theAmazons);
@@ -304,4 +304,58 @@ public class DaoFilteringIntegrationTest {
 
     }
 
+    @Test
+    public void shouldGetMostPopularPlaylists() {
+        List<RefinedPlaylist> playlistsToSave = new ArrayList<RefinedPlaylist>() {{
+            add(datasourceTestPlaylist1);
+            add(datasourceTestPlaylist2);
+            add(datasourceTestPlaylist3);
+        }};
+        refinedPlaylistDao.saveList(playlistsToSave);
+
+        assertThat(refinedPlaylistDao.getMongoCollection().count(), is(3L));
+
+        List<RefinedPlaylist> playlistSortedByFollowers = refinedPlaylistDao.getMostPopular(0, 10);
+
+        assertThat(playlistSortedByFollowers.size(), is(3));
+        assertThat(playlistSortedByFollowers.get(0), is(datasourceTestPlaylist2));
+        assertThat(playlistSortedByFollowers.get(1), is(datasourceTestPlaylist3));
+        assertThat(playlistSortedByFollowers.get(2), is(datasourceTestPlaylist1));
+    }
+
+    @Test
+    public void shouldGetUsersPlaylists() {
+        List<RefinedPlaylist> playlistsToSave = new ArrayList<RefinedPlaylist>() {{
+            add(datasourceTestPlaylist1);
+            add(datasourceTestPlaylist2);
+            add(datasourceTestPlaylist3);
+        }};
+        refinedPlaylistDao.saveList(playlistsToSave);
+
+        assertThat(refinedPlaylistDao.getMongoCollection().count(), is(3L));
+
+        List<RefinedPlaylist> millersincPlaylists = refinedPlaylistDao.getByUserId("millersinc", 0, 10);
+
+        assertThat(millersincPlaylists.size(), is(2));
+        assertThat(millersincPlaylists.get(0), is(datasourceTestPlaylist2));
+        assertThat(millersincPlaylists.get(1), is(datasourceTestPlaylist1));
+    }
+
+    @Test
+    public void shouldGetPlaylistsContainingTrack() {
+        List<RefinedPlaylist> playlistsToSave = new ArrayList<RefinedPlaylist>() {{
+            add(datasourceTestPlaylist1);
+            add(datasourceTestPlaylist2);
+            add(datasourceTestPlaylist3);
+        }};
+        refinedPlaylistDao.saveList(playlistsToSave);
+
+        assertThat(refinedPlaylistDao.getMongoCollection().count(), is(3L));
+
+        List<RefinedPlaylist> playlistsContainingCertainTrack = refinedPlaylistDao.getPlaylistsContainingTrack("20CNpCKq1oTdvekXaboyeq", 0, 10);
+
+        assertThat(playlistsContainingCertainTrack.size(), is(2));
+        assertThat(playlistsContainingCertainTrack.get(0), is(datasourceTestPlaylist1));
+        assertThat(playlistsContainingCertainTrack.get(1), is(datasourceTestPlaylist3));
+    }
 }
