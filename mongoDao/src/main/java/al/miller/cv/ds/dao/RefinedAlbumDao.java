@@ -1,7 +1,7 @@
-package com.svd.dao;
+package al.miller.cv.ds.dao;
 
-import com.svd.ClientHandler;
-import com.svd.util.SortOrder;
+import al.miller.cv.ds.ClientHandler;
+import al.miller.cv.ds.util.SortOrder;
 import org.springframework.stereotype.Repository;
 import refinedDataModels.RefinedAlbum;
 

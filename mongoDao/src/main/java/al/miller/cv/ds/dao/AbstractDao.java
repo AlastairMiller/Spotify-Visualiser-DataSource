@@ -1,7 +1,8 @@
-package com.svd.dao;
+package al.miller.cv.ds.dao;
 
+import al.miller.cv.ds.ClientHandler;
+import al.miller.cv.ds.mapper.RefinedtoJsonMapper;
 import com.mongodb.client.MongoCollection;
-import com.svd.ClientHandler;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.BsonDocument;
@@ -18,7 +19,6 @@ import java.util.List;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Sorts.descending;
 import static com.mongodb.client.model.Sorts.orderBy;
-import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
 
 @Slf4j
 @Data
@@ -97,7 +97,7 @@ public abstract class AbstractDao<T> implements DaoInterface<T> {
                 } else {
                     getter = clazz.getDeclaredMethod("get" + field.getName().substring(0, 1).toUpperCase() + field.getName().substring(1));
                 }
-                document.append(field.getName(), invokeSimpleGetter(getter, inputObject));
+                document.append(field.getName(), RefinedtoJsonMapper.invokeSimpleGetter(getter, inputObject));
             } catch (NoSuchMethodException e) {
                 log.error(e.getMessage());
             }

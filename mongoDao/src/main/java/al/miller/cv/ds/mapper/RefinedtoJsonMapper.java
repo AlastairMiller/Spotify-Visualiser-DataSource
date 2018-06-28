@@ -1,4 +1,4 @@
-package com.svd.mapper;
+package al.miller.cv.ds.mapper;
 
 import lombok.extern.slf4j.Slf4j;
 

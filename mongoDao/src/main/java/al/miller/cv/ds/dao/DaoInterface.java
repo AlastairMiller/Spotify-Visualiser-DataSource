@@ -1,4 +1,4 @@
-package com.svd.dao;
+package al.miller.cv.ds.dao;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 import com.mongodb.client.MongoCollection;
-import com.svd.ClientHandler;
-import com.svd.dao.MongoDao;
+import al.miller.cv.ds.ClientHandler;
+import al.miller.cv.ds.dao.MongoDao;
 import de.flapdoodle.embed.mongo.MongodExecutable;
 import de.flapdoodle.embed.mongo.MongodProcess;
 import de.flapdoodle.embed.mongo.MongodStarter;
@@ -11,7 +11,6 @@ import de.flapdoodle.embed.mongo.distribution.Version;
 import de.flapdoodle.embed.process.runtime.Network;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.Document;
-import org.bson.types.ObjectId;
 import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Assert;
@@ -26,7 +25,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 
-import static com.svd.mapper.JsontoRefinedMapper.*;
+import static al.miller.cv.ds.mapper.JsontoRefinedMapper.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 @Deprecated

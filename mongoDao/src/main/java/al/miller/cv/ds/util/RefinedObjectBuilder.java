@@ -1,4 +1,4 @@
-package com.svd.util;
+package al.miller.cv.ds.util;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

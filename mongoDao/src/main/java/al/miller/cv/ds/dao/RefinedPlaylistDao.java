@@ -1,7 +1,7 @@
-package com.svd.dao;
+package al.miller.cv.ds.dao;
 
+import al.miller.cv.ds.ClientHandler;
 import com.mongodb.BasicDBObject;
-import com.svd.ClientHandler;
 import org.springframework.stereotype.Repository;
 import refinedDataModels.RefinedPlaylist;
 

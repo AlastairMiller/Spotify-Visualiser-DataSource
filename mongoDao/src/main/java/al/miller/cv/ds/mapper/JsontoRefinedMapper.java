@@ -1,6 +1,6 @@
-package com.svd.mapper;
+package al.miller.cv.ds.mapper;
 
-import com.svd.util.RefinedObjectBuilder;
+import al.miller.cv.ds.util.RefinedObjectBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.Document;
 import refinedDataModels.*;

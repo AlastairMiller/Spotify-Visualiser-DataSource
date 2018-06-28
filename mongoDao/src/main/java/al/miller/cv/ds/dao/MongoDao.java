@@ -1,20 +1,17 @@
-package com.svd.dao;
+package al.miller.cv.ds.dao;
 
+import al.miller.cv.ds.ClientHandler;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
-import com.svd.ClientHandler;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.Document;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.List;
 
-import static com.mongodb.client.model.Filters.bitsAllClear;
 import static com.mongodb.client.model.Filters.eq;
-import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
+import static al.miller.cv.ds.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
 
 @Slf4j
 @Data

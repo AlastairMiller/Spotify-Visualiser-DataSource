@@ -1,4 +1,4 @@
-package com.svd;
+package al.miller.cv.ds;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;

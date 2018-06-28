@@ -1,8 +1,9 @@
-package com.svd.dao;
+package al.miller.cv.ds.dao;
 
+import al.miller.cv.ds.ClientHandler;
+import al.miller.cv.ds.mapper.RefinedtoJsonMapper;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
-import com.svd.ClientHandler;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.BsonDocument;
@@ -16,8 +17,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.svd.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
 
 @Repository
 @Slf4j
@@ -90,7 +89,7 @@ public class RefinedUserDao implements DaoInterface<RefinedUser> {
                 } else {
                     getter = RefinedUser.class.getDeclaredMethod("get" + field.getName().substring(0, 1).toUpperCase() + field.getName().substring(1));
                 }
-                document.append(field.getName(), invokeSimpleGetter(getter, inputObject));
+                document.append(field.getName(), RefinedtoJsonMapper.invokeSimpleGetter(getter, inputObject));
             } catch (NoSuchMethodException e) {
                 log.error(e.getMessage());
             }

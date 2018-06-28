@@ -1,15 +1,14 @@
-package com.svd.dao;
+package al.miller.cv.ds.dao;
 
-import com.svd.ClientHandler;
-import com.wrapper.spotify.model_objects.specification.PlaylistSimplified;
+import al.miller.cv.ds.ClientHandler;
+import org.bson.BsonDocument;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class PlaylistSimplifiedDao extends AbstractDao<PlaylistSimplified> {
+public class PlaylistSimplifiedDao extends AbstractDao<BsonDocument> {
 
     public PlaylistSimplifiedDao(ClientHandler clientHandler, String collectionName) {
         super(clientHandler, collectionName);
     }
-
 
 }
