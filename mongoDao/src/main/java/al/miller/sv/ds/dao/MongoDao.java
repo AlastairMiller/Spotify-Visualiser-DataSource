@@ -1,6 +1,6 @@
-package al.miller.cv.ds.dao;
+package al.miller.sv.ds.dao;
 
-import al.miller.cv.ds.ClientHandler;
+import al.miller.sv.ds.ClientHandler;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import lombok.Data;
@@ -11,7 +11,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 import static com.mongodb.client.model.Filters.eq;
-import static al.miller.cv.ds.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
+import static al.miller.sv.ds.mapper.RefinedtoJsonMapper.invokeSimpleGetter;
 
 @Slf4j
 @Data

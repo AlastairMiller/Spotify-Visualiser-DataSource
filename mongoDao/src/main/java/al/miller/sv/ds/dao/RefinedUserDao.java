@@ -1,7 +1,7 @@
-package al.miller.cv.ds.dao;
+package al.miller.sv.ds.dao;
 
-import al.miller.cv.ds.ClientHandler;
-import al.miller.cv.ds.mapper.RefinedtoJsonMapper;
+import al.miller.sv.ds.ClientHandler;
+import al.miller.sv.ds.mapper.RefinedtoJsonMapper;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import lombok.Data;

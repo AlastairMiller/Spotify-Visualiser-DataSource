@@ -1,6 +1,6 @@
-package al.miller.cv.ds.dao;
+package al.miller.sv.ds.dao;
 
-import al.miller.cv.ds.ClientHandler;
+import al.miller.sv.ds.ClientHandler;
 import org.bson.BsonDocument;
 import org.springframework.stereotype.Repository;
 
