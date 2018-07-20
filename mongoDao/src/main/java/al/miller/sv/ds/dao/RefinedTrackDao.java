@@ -31,4 +31,5 @@ public class RefinedTrackDao extends AbstractDao<RefinedTrack> {
                 .sort(orderBy(descending("albumId")))
                 .into(new ArrayList<>());
     }
+
 }

@@ -221,7 +221,7 @@ public class DaoFilteringIntegrationTest {
 
         assertThat(refinedAlbumDao.getMongoCollection().count(), is(3L));
 
-        List<RefinedAlbum> filteredForArtistChvrches = refinedAlbumDao.geAllfromArtistId(0, 10, "3CjlHNtplJyTf9npxaPl5w");
+        List<RefinedAlbum> filteredForArtistChvrches = refinedAlbumDao.getAllFromArtistId(0, 10, "3CjlHNtplJyTf9npxaPl5w");
 
         assertThat(filteredForArtistChvrches.size(), is(2));
         assertThat(filteredForArtistChvrches.get(0), is(loveIsDead));

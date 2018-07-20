@@ -18,6 +18,11 @@ public class ClientHandler {
     private final MongoClient mongoClient;
     private final MongoDatabase mongoDB;
 
+    public ClientHandler(MongoClient mongoClient, MongoDatabase mongoDB){
+        this.mongoClient = mongoClient;
+        this.mongoDB = mongoDB;
+    }
+
     public ClientHandler(String host, int port, String databaseName) {
         CodecRegistry codecRegistry = CodecRegistries.fromRegistries(MongoClient.getDefaultCodecRegistry(),
                 CodecRegistries.fromProviders(new JacksonCodecProvider(createObjectMapper())));

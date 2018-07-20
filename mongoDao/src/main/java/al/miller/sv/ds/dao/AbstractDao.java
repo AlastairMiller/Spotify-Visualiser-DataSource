@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.bson.BsonDocument;
 import org.bson.BsonString;
 import org.bson.Document;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.beans.ConstructorProperties;
 import java.lang.reflect.Field;
@@ -17,11 +19,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.in;
 import static com.mongodb.client.model.Sorts.descending;
 import static com.mongodb.client.model.Sorts.orderBy;
 
 @Slf4j
 @Data
+@Repository
 public abstract class AbstractDao<T> implements DaoInterface<T> {
 
     @SuppressWarnings("unchecked")
@@ -35,6 +39,7 @@ public abstract class AbstractDao<T> implements DaoInterface<T> {
         this.mongoCollection = this.clientHandler.getMongoDB().getCollection(collectionName, clazz);
     }
 
+
     @Override
     public T getById(String id) {
         return mongoCollection.find(eq("id", id))
@@ -43,7 +48,7 @@ public abstract class AbstractDao<T> implements DaoInterface<T> {
 
     @Override
     public List<T> getMultipleById(List<String> ids) {
-        return mongoCollection.find(eq("id", ids))
+        return mongoCollection.find(in("id", ids))
                 .into(new ArrayList<>());
     }
 

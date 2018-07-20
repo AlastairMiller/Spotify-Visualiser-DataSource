@@ -30,14 +30,14 @@ public class RefinedAlbumDao extends AbstractDao<RefinedAlbum> {
                 .getTrackIds();
     }
 
-    public List<RefinedAlbum> geAllfromArtistId(int offset, int limit, String artistId) {
+    public List<RefinedAlbum> getAllFromArtistId(int offset, int limit, String artistId) {
         return mongoCollection.find(eq("artistsIds", artistId))
                 .skip(offset)
                 .limit(limit)
                 .into(new ArrayList<>());
     }
 
-    public List<RefinedAlbum> getAllfromTrackId(int offset, int limit, String trackId) {
+    public List<RefinedAlbum> getAllFromTrackId(int offset, int limit, String trackId) {
         return mongoCollection.find(eq("trackIds", trackId))
                 .skip(offset)
                 .limit(limit)

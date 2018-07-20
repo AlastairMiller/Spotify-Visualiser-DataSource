@@ -8,6 +8,7 @@ import refinedDataModels.RefinedPlaylist;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.mongodb.client.model.Filters.regex;
 import static com.mongodb.client.model.Sorts.descending;
 import static com.mongodb.client.model.Sorts.orderBy;
 
@@ -42,6 +43,11 @@ public class RefinedPlaylistDao extends AbstractDao<RefinedPlaylist> {
         return mongoCollection.find(query)
                 .skip(offset)
                 .limit(limit)
+                .into(new ArrayList<>());
+    }
+
+    public List<RefinedPlaylist> getPlaylistByCountry(String countryCode) {
+        return mongoCollection.find(regex("name", ".*"+countryCode+"*."))
                 .into(new ArrayList<>());
     }
 
