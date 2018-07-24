@@ -17,6 +17,7 @@
     <scm>
         <developerConnection>scm:git:https://github.com/AlastairMiller/Spotify-Visualiser-DataSource.git
         </developerConnection>
+        <url>https://github.com/AlastairMiller/Spotify-Visualiser-DataSource.git</url>
         <tag>HEAD</tag>
     </scm>
     <build>
