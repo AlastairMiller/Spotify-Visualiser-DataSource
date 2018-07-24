@@ -66,6 +66,8 @@ public abstract class AbstractDao<T> implements DaoInterface<T> {
     public List<T> getMostPopular(int limit, int offset) {
         return mongoCollection.find()
                 .sort(orderBy(descending("popularity")))
+                .skip(offset)
+                .limit(limit)
                 .into(new ArrayList<>());
     }
 

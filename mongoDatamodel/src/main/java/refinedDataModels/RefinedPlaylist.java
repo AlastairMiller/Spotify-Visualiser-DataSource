@@ -3,6 +3,7 @@ package refinedDataModels;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.neovisionaries.i18n.CountryCode;
 import fr.javatic.mongo.jacksonCodec.objectId.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,4 +30,5 @@ public class RefinedPlaylist {
     private String userId;
     private List<String> trackIds;
     private String spotifyURI;
+    private CountryCode countryCode;
 }

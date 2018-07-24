@@ -46,8 +46,11 @@ public class RefinedPlaylistDao extends AbstractDao<RefinedPlaylist> {
                 .into(new ArrayList<>());
     }
 
-    public List<RefinedPlaylist> getPlaylistByCountry(String countryCode) {
-        return mongoCollection.find(regex("name", ".*"+countryCode+"*."))
+    public List<RefinedPlaylist> getPlaylistByCountry(String countryCode, int offset, int limit) {
+        BasicDBObject query = new BasicDBObject("countryCode", countryCode);
+        return mongoCollection.find(query)
+                .skip(offset)
+                .limit(limit)
                 .into(new ArrayList<>());
     }
 
