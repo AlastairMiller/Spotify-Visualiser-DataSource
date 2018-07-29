@@ -4,8 +4,6 @@ import al.miller.sv.ds.ClientHandler;
 import com.mongodb.BasicDBObject;
 import org.bson.BsonDocument;
 import org.bson.BsonInt32;
-import org.bson.BsonString;
-import org.bson.conversions.Bson;
 import org.springframework.stereotype.Repository;
 import refinedDataModels.RefinedTrack;
 
@@ -38,7 +36,7 @@ public class RefinedTrackDao extends AbstractDao<RefinedTrack> {
     }
 
     public RefinedTrack getRandom() {
-        return mongoCollection.aggregate(Collections.singletonList(new BsonDocument("size", new BsonInt32(1)))).first();
+        return mongoCollection.aggregate(Collections.singletonList(new BsonDocument("$sample", new BsonDocument("size", new BsonInt32(1))))).first();
     }
 
 }
