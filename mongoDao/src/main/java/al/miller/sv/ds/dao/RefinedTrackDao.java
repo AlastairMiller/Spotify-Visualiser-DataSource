@@ -2,10 +2,15 @@ package al.miller.sv.ds.dao;
 
 import al.miller.sv.ds.ClientHandler;
 import com.mongodb.BasicDBObject;
+import org.bson.BsonDocument;
+import org.bson.BsonInt32;
+import org.bson.BsonString;
+import org.bson.conversions.Bson;
 import org.springframework.stereotype.Repository;
 import refinedDataModels.RefinedTrack;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static com.mongodb.client.model.Sorts.*;
@@ -30,6 +35,10 @@ public class RefinedTrackDao extends AbstractDao<RefinedTrack> {
         return mongoCollection.find(query)
                 .sort(orderBy(descending("albumId")))
                 .into(new ArrayList<>());
+    }
+
+    public RefinedTrack getRandom() {
+        return mongoCollection.aggregate(Collections.singletonList(new BsonDocument("size", new BsonInt32(1)))).first();
     }
 
 }
