@@ -8,7 +8,7 @@
     <groupId>al.miller.sv</groupId>
     <artifactId>SpotifyVisualiserDataSource</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.9</version>
+    <version>1.1.0-SNAPSHOT</version>
     <modules>
         <module>mongoDatamodel</module>
         <module>mongoDao</module>
