@@ -6,16 +6,19 @@ import com.mongodb.client.MongoCollection;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.BsonDocument;
+import org.bson.BsonInt32;
 import org.bson.BsonString;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import refinedDataModels.RefinedTrack;
 
 import java.beans.ConstructorProperties;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
@@ -44,6 +47,11 @@ public abstract class AbstractDao<T> implements DaoInterface<T> {
     public T getById(String id) {
         return mongoCollection.find(eq("id", id))
                 .first();
+    }
+
+    @Override
+    public T getRandom() {
+        return mongoCollection.aggregate(Collections.singletonList(new BsonDocument("$sample", new BsonDocument("size", new BsonInt32(1))))).first();
     }
 
     @Override

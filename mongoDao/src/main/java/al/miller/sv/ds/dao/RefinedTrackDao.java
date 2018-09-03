@@ -35,8 +35,5 @@ public class RefinedTrackDao extends AbstractDao<RefinedTrack> {
                 .into(new ArrayList<>());
     }
 
-    public RefinedTrack getRandom() {
-        return mongoCollection.aggregate(Collections.singletonList(new BsonDocument("$sample", new BsonDocument("size", new BsonInt32(1))))).first();
-    }
 
 }

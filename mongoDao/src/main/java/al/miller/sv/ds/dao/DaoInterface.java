@@ -6,6 +6,8 @@ public interface DaoInterface<T> {
 
     T getById(String id);
 
+    T getRandom();
+
     List<T> getMultipleById(List<String> ids);
 
     T getBySpotifyUri(String spotifyId);
