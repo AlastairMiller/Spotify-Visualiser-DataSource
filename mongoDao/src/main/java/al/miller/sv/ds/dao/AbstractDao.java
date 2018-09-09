@@ -76,7 +76,7 @@ public abstract class AbstractDao<T> implements DaoInterface<T> {
         return mongoCollection.find()
                 .sort(orderBy(descending("popularity")))
                 .skip(offset)
-                .limit(limit)
+                .limit(limit-offset)
                 .into(new ArrayList<>());
     }
 
