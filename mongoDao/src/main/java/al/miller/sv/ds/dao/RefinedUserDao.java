@@ -7,6 +7,7 @@ import com.mongodb.client.MongoCollection;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.BsonDocument;
+import org.bson.BsonInt32;
 import org.bson.BsonString;
 import org.bson.Document;
 import org.springframework.stereotype.Repository;
@@ -16,6 +17,7 @@ import java.beans.ConstructorProperties;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Repository
@@ -39,6 +41,12 @@ public class RefinedUserDao implements DaoInterface<RefinedUser> {
         BasicDBObject query = new BasicDBObject("id", id);
         return mongoCollection.find(query)
                 .first();
+    }
+
+    @Override
+    public RefinedUser getRandom() {
+        return mongoCollection.aggregate(Collections.singletonList(new BsonDocument("$sample", new BsonDocument("size", new BsonInt32(1))))).first();
+
     }
 
     @Override

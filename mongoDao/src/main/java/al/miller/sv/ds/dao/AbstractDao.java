@@ -49,6 +49,7 @@ public abstract class AbstractDao<T> implements DaoInterface<T> {
                 .first();
     }
 
+
     @Override
     public T getRandom() {
         return mongoCollection.aggregate(Collections.singletonList(new BsonDocument("$sample", new BsonDocument("size", new BsonInt32(1))))).first();
