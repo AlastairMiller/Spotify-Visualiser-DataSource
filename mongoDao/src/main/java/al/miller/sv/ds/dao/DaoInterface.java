@@ -1,8 +1,15 @@
 package al.miller.sv.ds.dao;
 
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
+
 import java.util.List;
 
 public interface DaoInterface<T> {
+
+    void createCollection(String collectionName);
+
+    MongoCollection<Document> getCollection();
 
     T getById(String id);
 

@@ -3,15 +3,14 @@ package al.miller.sv.ds.dao;
 import al.miller.sv.ds.ClientHandler;
 import al.miller.sv.ds.mapper.RefinedtoJsonMapper;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.model.Sorts;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.BsonDocument;
 import org.bson.BsonInt32;
 import org.bson.BsonString;
 import org.bson.Document;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import refinedDataModels.RefinedTrack;
 
 import java.beans.ConstructorProperties;
 import java.lang.reflect.Field;
@@ -35,11 +34,23 @@ public abstract class AbstractDao<T> implements DaoInterface<T> {
     protected final Class<T> clazz = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
     protected ClientHandler clientHandler;
     protected MongoCollection<T> mongoCollection;
+    protected String collectionName;
 
     @ConstructorProperties({"clientHandler", "mongoCollectionName"})
     public AbstractDao(ClientHandler clientHandler, String collectionName) {
         this.clientHandler = clientHandler;
         this.mongoCollection = this.clientHandler.getMongoDB().getCollection(collectionName, clazz);
+        this.collectionName = collectionName;
+    }
+
+    @Override
+    public void createCollection(String collectionName) {
+        clientHandler.getMongoDB().createCollection(collectionName);
+    }
+
+    @Override
+    public MongoCollection<Document> getCollection() {
+        return clientHandler.getMongoDB().getCollection(collectionName);
     }
 
 
@@ -58,6 +69,7 @@ public abstract class AbstractDao<T> implements DaoInterface<T> {
     @Override
     public List<T> getMultipleById(List<String> ids) {
         return mongoCollection.find(in("id", ids))
+                .sort(Sorts.ascending("id"))
                 .into(new ArrayList<>());
     }
 
@@ -76,7 +88,7 @@ public abstract class AbstractDao<T> implements DaoInterface<T> {
         return mongoCollection.find()
                 .sort(orderBy(descending("popularity")))
                 .skip(offset)
-                .limit(limit-offset)
+                .limit(limit - offset)
                 .into(new ArrayList<>());
     }
 

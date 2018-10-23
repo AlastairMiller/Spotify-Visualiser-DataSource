@@ -28,12 +28,25 @@ public class RefinedUserDao implements DaoInterface<RefinedUser> {
     protected ClientHandler clientHandler;
     protected MongoCollection<RefinedUser> mongoCollection;
     private final Class<RefinedUser> clazz = RefinedUser.class;
+    protected String collectionName;
 
 
     @ConstructorProperties({"clientHandler", "mongoCollection"})
     public RefinedUserDao(ClientHandler clientHandler, String collectionName) {
         this.clientHandler = clientHandler;
         this.mongoCollection = this.clientHandler.getMongoDB().getCollection(collectionName, clazz);
+        this.collectionName = collectionName;
+    }
+
+    @Override
+    public void createCollection(String collectionName) {
+        clientHandler.getMongoDB().createCollection(collectionName);
+    }
+
+    @Override
+    public MongoCollection<Document> getCollection() {
+        return clientHandler.getMongoDB().getCollection(collectionName);
+
     }
 
     @Override
