@@ -44,15 +44,19 @@ public class RefinedArtistDao extends AbstractDao<RefinedArtist> {
                 .into(new ArrayList<>());
     }
 
+    //This is used for aggregating genres so do not delete.
     public List<Document> getMostPopularArtistsForCountry(String countryCode) {
         return clientHandler.getMongoDB().getCollection("artists_popular_in_" + countryCode).find()
                 .sort(orderBy(descending("value")))
                 .into(new ArrayList<>());
     }
 
-    public List<Document> getMostPopularGenresForCountry(String countryCode) {
+    public List<Document> getMostPopularGenresForCountry(String countryCode, int offset, int limit) {
         return clientHandler.getMongoDB().getCollection("genres_popular_in_" + countryCode).find()
-
+                .sort(orderBy(descending("value")))
+                .skip(offset)
+                .limit(limit)
+                .into(new ArrayList<>());
     }
 
 }

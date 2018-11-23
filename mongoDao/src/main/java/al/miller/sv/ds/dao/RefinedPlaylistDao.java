@@ -90,7 +90,6 @@ public class RefinedPlaylistDao extends AbstractDao<RefinedPlaylist> {
             BasicDBObject query = new BasicDBObject("countryCode", countryCode);
 
             clientHandler.getMongoDB().getCollection("tracks_popular_in_" + countryCode).drop();
-            clientHandler.getMongoDB().createCollection("tracks_popular_in_" + countryCode);
 
             mongoCollection.mapReduce(map, reduce, Document.class)
                     .filter(query)
