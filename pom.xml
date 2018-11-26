@@ -35,6 +35,11 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
+            </plugin>
         </plugins>
     </build>
 
@@ -93,6 +98,7 @@
             <artifactId>nv-i18n</artifactId>
             <version>1.23</version>
         </dependency>
+
 
 
     </dependencies>

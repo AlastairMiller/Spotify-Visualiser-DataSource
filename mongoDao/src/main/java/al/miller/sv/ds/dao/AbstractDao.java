@@ -22,6 +22,7 @@ import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.in;
+import static com.mongodb.client.model.Filters.text;
 import static com.mongodb.client.model.Sorts.descending;
 import static com.mongodb.client.model.Sorts.orderBy;
 
@@ -79,8 +80,10 @@ public abstract class AbstractDao<T> implements DaoInterface<T> {
                 .first();
     }
 
-    public List<T> getAllMatchingNames(String name) {
-        return mongoCollection.find(eq("name", name))
+    public List<T> getAllMatchingNames(String name, int limit, int offset) {
+        return mongoCollection.find(text(name))
+                .skip(offset)
+                .limit(limit)
                 .into(new ArrayList<>());
     }
 
