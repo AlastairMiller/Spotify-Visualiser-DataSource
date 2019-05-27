@@ -1,4 +1,4 @@
-# Product Name
+# Spotify Visualiser DataSource
 
 [![Version][download-version]][maven-url]
 [![Downloads Stats][maven-image]][downloads-url]
